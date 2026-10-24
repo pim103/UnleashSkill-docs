@@ -1,0 +1,1333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/troubleshooting/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/branches/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/branches/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/branches/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/dynamic-values/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/dynamic-values/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/dynamic-values/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/execution/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/execution/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/execution/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/graph/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/graph/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/graph/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/presentation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/presentation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/presentation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/simulation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/simulation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/concepts/targeting/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/targeting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/targeting/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/configuration/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/configuration/damage-reactions/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/damage-reactions/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/damage-reactions/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/configuration/entities/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/entities/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/entities/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/configuration/events/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/events/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/events/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/configuration/simulation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/simulation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/configuration/statuses/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/statuses/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/statuses/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/getting-started/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/getting-started/cast-from-code/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/cast-from-code/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/cast-from-code/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/getting-started/first-skill/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/first-skill/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/first-skill/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/getting-started/installation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/getting-started/scene-setup/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/scene-setup/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/scene-setup/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/recipes/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/recipes/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/recipes/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/recipes/fireball/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/recipes/fireball/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/recipes/fireball/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/apply-status/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/apply-status/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/apply-status/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/attach/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/attach/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/attach/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/cast-skill/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/cast-skill/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/cast-skill/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/damage-advanced/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/damage-advanced/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/damage-advanced/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/damage-simple/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/damage-simple/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/damage-simple/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/dash/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/dash/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/dash/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/destroy-spell/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/destroy-spell/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/destroy-spell/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/detach/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/detach/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/detach/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/dodge/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/dodge/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/dodge/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/emit-event/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/emit-event/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/emit-event/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/heal/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/heal/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/heal/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/kill/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/kill/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/kill/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-cooldown/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-cooldown/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-cooldown/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-spell/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-spell/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-spell/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-status/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-status/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-status/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/reaction/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/reaction/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/reaction/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/remove-status/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/remove-status/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/remove-status/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/replace-slot/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/replace-slot/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/replace-slot/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/set-passive/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/set-passive/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/set-passive/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/stat-modifier/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/stat-modifier/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/stat-modifier/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/store-value/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/store-value/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/store-value/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/scale-over-time/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/scale-over-time/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/scale-over-time/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/simple-movement/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/simple-movement/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/simple-movement/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/trajectory/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/trajectory/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/trajectory/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/chance-condition/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/chance-condition/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/chance-condition/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/entity-type-condition/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/entity-type-condition/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/entity-type-condition/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-attack-phase/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-attack-phase/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-attack-phase/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-expire/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-expire/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-expire/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-hit/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-hit/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-hit/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-tick/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-tick/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-tick/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/stat-condition/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/stat-condition/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/stat-condition/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/debug/debug-log/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/debug/debug-log/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/debug/debug-log/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/area/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/area/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/area/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/attack/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/attack/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/attack/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/beam/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/beam/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/beam/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/game-object/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/game-object/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/game-object/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/summon/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/summon/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/summon/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/camera-shake/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/camera-shake/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/camera-shake/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-animation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-animation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-animation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-effect/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-effect/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-effect/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-sound/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-sound/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-sound/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/stop-effect/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/stop-effect/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/stop-effect/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/start/start-node/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/start/start-node/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/start/start-node/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/blocker/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/blocker/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/blocker/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/chain/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/chain/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/chain/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/conditional-check/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/conditional-check/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/conditional-check/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/delay/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/delay/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/delay/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/fork/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/fork/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/fork/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/mark-branch/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/mark-branch/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/mark-branch/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/multiply-branch-damage/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/multiply-branch-damage/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/multiply-branch-damage/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/random/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/random/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/random/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/repeat/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/repeat/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/repeat/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/target-selection/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/target-selection/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/target-selection/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/targeting/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/targeting/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/targeting/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/on-game-event/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/on-game-event/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/on-game-event/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/stat-listener/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/stat-listener/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/stat-listener/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/timer-trigger/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/timer-trigger/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/timer-trigger/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/skills/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/skills/settings/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/settings/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/settings/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/skills/slots/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/slots/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/slots/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/skills/testing/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/testing/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/testing/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/architecture/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/architecture/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/cast-cycle/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/cast-cycle/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/cast-cycle/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/data/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/data/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/data/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/extensions/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/extensions/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/extensions/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/gameplay/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/gameplay/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/gameplay/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/presentation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/presentation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/presentation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/simulation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/simulation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/static-state/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/static-state/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/static-state/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/technical/writing-a-node/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/writing-a-node/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/writing-a-node/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/troubleshooting/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/troubleshooting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/troubleshooting/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/branches/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/branches/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/branches/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/dynamic-values/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/dynamic-values/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/dynamic-values/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/execution/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/execution/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/execution/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/graph/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/graph/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/graph/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/presentation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/presentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/presentation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/simulation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/simulation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/concepts/targeting/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/concepts/targeting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/concepts/targeting/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/configuration/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/configuration/damage-reactions/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/damage-reactions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/damage-reactions/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/configuration/entities/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/entities/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/entities/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/configuration/events/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/events/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/events/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/configuration/simulation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/simulation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/configuration/statuses/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/configuration/statuses/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/configuration/statuses/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/getting-started/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/getting-started/cast-from-code/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/cast-from-code/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/cast-from-code/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/getting-started/first-skill/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/first-skill/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/first-skill/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/getting-started/installation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/getting-started/scene-setup/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/scene-setup/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/getting-started/scene-setup/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/recipes/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/recipes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/recipes/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/recipes/fireball/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/recipes/fireball/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/recipes/fireball/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/apply-status/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/apply-status/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/apply-status/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/attach/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/attach/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/attach/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/cast-skill/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/cast-skill/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/cast-skill/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/damage-advanced/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/damage-advanced/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/damage-advanced/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/damage-simple/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/damage-simple/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/damage-simple/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/dash/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/dash/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/dash/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/destroy-spell/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/destroy-spell/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/destroy-spell/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/detach/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/detach/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/detach/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/dodge/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/dodge/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/dodge/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/emit-event/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/emit-event/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/emit-event/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/heal/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/heal/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/heal/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/kill/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/kill/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/kill/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-cooldown/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-cooldown/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-cooldown/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-spell/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-spell/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-spell/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-status/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/modify-status/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/modify-status/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/reaction/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/reaction/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/reaction/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/remove-status/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/remove-status/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/remove-status/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/replace-slot/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/replace-slot/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/replace-slot/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/set-passive/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/set-passive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/set-passive/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/stat-modifier/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/stat-modifier/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/stat-modifier/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/store-value/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/action/store-value/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/action/store-value/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/scale-over-time/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/scale-over-time/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/scale-over-time/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/simple-movement/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/simple-movement/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/simple-movement/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/trajectory/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/behavior/trajectory/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/behavior/trajectory/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/chance-condition/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/chance-condition/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/chance-condition/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/entity-type-condition/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/entity-type-condition/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/entity-type-condition/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-attack-phase/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-attack-phase/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-attack-phase/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-expire/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-expire/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-expire/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-hit/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-hit/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-hit/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-tick/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/on-tick/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/on-tick/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/stat-condition/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/condition/stat-condition/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/condition/stat-condition/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/debug/debug-log/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/debug/debug-log/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/debug/debug-log/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/area/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/area/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/area/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/attack/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/attack/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/attack/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/beam/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/beam/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/beam/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/game-object/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/game-object/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/game-object/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/summon/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/module/summon/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/module/summon/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/camera-shake/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/camera-shake/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/camera-shake/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-animation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-animation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-animation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-effect/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-effect/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-effect/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-sound/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/play-sound/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/play-sound/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/stop-effect/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/presentation/stop-effect/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/presentation/stop-effect/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/start/start-node/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/start/start-node/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/start/start-node/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/blocker/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/blocker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/blocker/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/chain/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/chain/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/chain/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/conditional-check/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/conditional-check/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/conditional-check/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/delay/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/delay/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/delay/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/fork/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/fork/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/fork/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/mark-branch/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/mark-branch/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/mark-branch/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/multiply-branch-damage/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/multiply-branch-damage/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/multiply-branch-damage/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/random/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/random/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/random/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/repeat/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/repeat/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/repeat/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/target-selection/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/target-selection/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/target-selection/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/targeting/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/support/targeting/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/support/targeting/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/on-game-event/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/on-game-event/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/on-game-event/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/stat-listener/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/stat-listener/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/stat-listener/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/timer-trigger/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/reference/nodes/trigger/timer-trigger/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/reference/nodes/trigger/timer-trigger/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/skills/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/skills/settings/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/settings/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/settings/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/skills/slots/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/slots/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/slots/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/skills/testing/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/skills/testing/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/skills/testing/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/architecture/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/architecture/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/architecture/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/cast-cycle/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/cast-cycle/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/cast-cycle/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/data/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/data/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/data/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/extensions/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/extensions/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/extensions/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/gameplay/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/gameplay/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/gameplay/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/presentation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/presentation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/presentation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/simulation/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/simulation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/simulation/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/static-state/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/static-state/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/static-state/"/>
+    </url>
+    <url>
+        <loc>https://pim103.github.io/UnleashSkill-docs/fr/technical/writing-a-node/</loc>
+        <lastmod>2026-10-24</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/writing-a-node/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://pim103.github.io/UnleashSkill-docs/technical/writing-a-node/"/>
+    </url>
+</urlset>
