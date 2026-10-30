@@ -1,0 +1,2403 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Create skills with a node graph in Unity">
+      
+      
+      
+        <link rel="canonical" href="https://pim103.github.io/UnleashSkill-docs/technical/cast-cycle/">
+      
+      
+        <link rel="prev" href="../extensions/">
+      
+      
+        <link rel="next" href="../writing-a-node/">
+      
+      
+        
+          <link rel="alternate" href="./" hreflang="en">
+        
+          <link rel="alternate" href="../../fr/technical/cast-cycle/" hreflang="fr">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Cast cycle - UnleashSkill</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cast-cycle" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UnleashSkill" class="md-header__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UnleashSkill
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cast cycle
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../../fr/technical/cast-cycle/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../configuration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/nodes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Node reference
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../recipes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Recipes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Troubleshooting
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technical
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UnleashSkill" class="md-nav__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UnleashSkill
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/scene-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Set up a scene
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    First skill (Fireball)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/cast-from-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cast a skill from code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graph, nodes and ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Running a skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/branches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Targets and branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/targeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Aim, anchors and directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation world
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dynamic-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dynamic values
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../configuration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entities (stats, teams, types, templates)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/damage-reactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Damage and reactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/statuses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuses
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Events, marks and skill tags
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation and general settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../skills/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skill settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/slots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Slots, passives and combos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing a skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Node reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recipes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Recipes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/fireball/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fireball
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technical
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technical
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extension points
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cast cycle
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cast cycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cast-skillgraphmodeltrycompute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cast: SkillGraphModel.TryCompute
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-node-the-engine-never-fires-the-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting a node: the engine never fires the outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branches-skillexecutioncontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches: SkillExecutionContext
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#during-the-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        During the execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-of-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End of execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors-exceptions-and-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors: exceptions and loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-a-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Writing a node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation world
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnose and measure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gameplay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuses, events, damage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Static state and preview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cast-skillgraphmodeltrycompute" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cast: SkillGraphModel.TryCompute
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-a-node-the-engine-never-fires-the-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Starting a node: the engine never fires the outputs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branches-skillexecutioncontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branches: SkillExecutionContext
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#during-the-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        During the execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#end-of-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        End of execution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#errors-exceptions-and-loops" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Errors: exceptions and loops
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="cast-cycle">Cast cycle<a class="headerlink" href="#cast-cycle" title="Permanent link">&para;</a></h1>
+<p>User version: <a href="../../concepts/execution/">Running a skill</a>. Here, the path in the code.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>SkillCaster / SkillSlots / game
+        │
+        ▼
+SkillGraphModel.TryCompute(caster, out execution, options)
+        │  CheckCast: valid graph, locks, cooldown, cost
+        │  new SkillExecution(graph, caster)       ← root context
+        │  PayCost, StartCooldown
+        │  UnleashSkillManager.RegisterActiveSkillExecution
+        ├── cast time? execution.BeginCast / BeginChargedCast
+        │              (Start's “During cast” output, IsCastPhase branch)
+        └── otherwise: GameEvents.RaiseSkillCast, then ExecuteNodeAndChain(StartNode)
+
+Each world tick (step 6b)                        Each frame (manager Update)
+  ExecutionStepper → execution.Step(clock)         execution.Update()
+    cast time, hold                                  node.OnRuntime (visual only)
+    node.OnSimulationStep(…, clock)                  AreAllNodesCompleted → IsCompleted
+                                                     → execution.Cleanup(), removed
+</code></pre></div>
+<h2 id="cast-skillgraphmodeltrycompute">Cast: <code>SkillGraphModel.TryCompute</code><a class="headerlink" href="#cast-skillgraphmodeltrycompute" title="Permanent link">&para;</a></h2>
+<p><code>TryCompute(caster, out execution, options)</code> (<code>Runtime/Execution/SkillGraphModel.cs</code>):</p>
+<ol>
+<li><strong><code>CheckCast</code></strong> returns a <code>SkillCastResult</code>: <code>InvalidGraph</code> (not exactly one <code>StartNode</code>, a node whose type no longer exists, or a graph from before the first release; checked before the cost and the cooldown, logged once per skill), <code>ActionLocked</code>, <code>SkillBlocked</code> (status that blocks a tag of the skill), <code>AttackInProgress</code> (attack in a non-cancelable phase), <code>OnCooldown</code>, <code>InsufficientResource</code>. Only <code>Success</code> casts.</li>
+<li>A new action cancels the caster's attacks that can still be canceled (<code>AttackCancellation.CancelAttacks</code>).</li>
+<li><code>new SkillExecution(this, caster)</code> creates the execution and its <strong>root context</strong>. <code>SkillCastOptions.InitializeContext</code> can write to it before release (imposed target, values).</li>
+<li>Cost taken and cooldown started <strong>at cast</strong>, hence at the start of the cast time (refunded if it is canceled: <code>RefundLaunch</code>).</li>
+<li>The execution is registered in the manager, then starts: directly, or through the cast time.</li>
+</ol>
+<p><code>SkillCastOptions</code> covers the special cases with its flags (<code>PayCost</code>, <code>CheckCooldown</code>, <code>StartCooldown</code>, <code>CheckLocks</code>, <code>Passive</code>): <code>ForPassive()</code> (passive slot: no cost, no cooldown, no lock), free recast, skill cast by another skill (<code>CastSkillModel</code>). <code>Compute(caster)</code> is a shortcut that ignores the reason for a refusal.</p>
+<h2 id="starting-a-node-the-engine-never-fires-the-outputs">Starting a node: the engine never fires the outputs<a class="headerlink" href="#starting-a-node-the-engine-never-fires-the-outputs" title="Permanent link">&para;</a></h2>
+<p><code>ExecuteNodeAndChain</code> (private) <strong>registers the instance then calls <code>OnStart</code>, nothing else</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">instance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ActiveNodeInstance</span><span class="p">(</span><span class="n">node</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">);</span>
+<span class="n">instance</span><span class="p">.</span><span class="n">StartTick</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">TickInProgress</span><span class="p">;</span>
+<span class="n">execution</span><span class="p">.</span><span class="n">AddActiveInstance</span><span class="p">(</span><span class="n">instance</span><span class="p">);</span><span class="w">          </span><span class="c1">// before OnStart: an instant node can complete inside it</span>
+<span class="n">execution</span><span class="p">.</span><span class="n">BeginNodeStart</span><span class="p">();</span>
+<span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">instance</span><span class="p">.</span><span class="n">RuntimeData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="n">OnStart</span><span class="p">(</span><span class="n">caster</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">);</span><span class="w"> </span><span class="p">}</span>
+<span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">exception</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">execution</span><span class="p">.</span><span class="n">Fail</span><span class="p">(</span><span class="n">exception</span><span class="p">,</span><span class="w"> </span><span class="n">instance</span><span class="p">);</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// see Errors below</span>
+<span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">execution</span><span class="p">.</span><span class="n">EndNodeStart</span><span class="p">();</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// end of the outermost start: deferred actions (SkillExecution.Defer)</span>
+</code></pre></div>
+<p>Deferred actions serve the instant resolution of turn-based mode: a query on the selection returns its result after the <code>OnStart</code> that queued it, never during it. In turn-based mode, <code>TryCompute</code> ends the execution without waiting for a tick if all its nodes are done (<code>CompleteIfResolved</code>).</p>
+<p><strong>The node</strong> fires its outputs:</p>
+<table>
+<thead>
+<tr>
+<th>Call (<code>SkillExecution</code>)</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CompleteNodeInstance(node, caster)</code></td>
+<td>Ends the node's most recent instance and fires <strong>all</strong> its outputs</td>
+</tr>
+<tr>
+<td><code>CompleteNodeInstance(node, caster, runtimeData)</code></td>
+<td>Same, for the exact instance that carries this runtimeData (several simultaneous instances of the same node)</td>
+</tr>
+<tr>
+<td><code>CompleteNodeInstanceWithoutOutputs(node, caster)</code> / <code>(node, runtimeData)</code></td>
+<td>Ends without firing: failure, false condition, module whose outputs are listeners</td>
+</tr>
+<tr>
+<td><code>ExecuteChainedNodes(node, caster, context)</code></td>
+<td>Fires the outputs <strong>without ending</strong>: a listener, on each event</td>
+</tr>
+<tr>
+<td><code>ExecuteChainedNodes(node, caster, context, portType, rank)</code></td>
+<td>Fires a single output (true / false of a condition)</td>
+</tr>
+<tr>
+<td><code>ExecuteChainedNodes(node, caster, context, filter)</code></td>
+<td>Fires the outputs whose port passes the filter (the Start leaves out “During cast”)</td>
+</tr>
+</tbody>
+</table>
+<p>A node that does neither <strong>blocks the chain</strong>: its instance stays active and the execution never ends.</p>
+<h2 id="branches-skillexecutioncontext">Branches: <code>SkillExecutionContext</code><a class="headerlink" href="#branches-skillexecutioncontext" title="Permanent link">&para;</a></h2>
+<p>Each time outputs are fired, each chained node receives <code>sourceContext.CreateBranch()</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Copied per branch (the child inherits, sisters do not see each other)</th>
+<th>Shared by the whole execution (<code>SharedState</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Targets</code></td>
+<td><code>Caster</code>, <code>Execution</code></td>
+</tr>
+<tr>
+<td><code>MainSkillPrefab</code>, <code>MainBody</code></td>
+<td><code>SetData</code> / <code>GetData</code> data</td>
+</tr>
+<tr>
+<td><code>ImpactPoint</code>, <code>ImpactNormal</code>, <code>Aim</code></td>
+<td><code>StartTime</code></td>
+</tr>
+<tr>
+<td>Branch data <code>SetBranchData</code> / <code>GetBranchData</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Named branch data: <code>BranchDirection</code> (Fork Spread / Circle, read by modules and the Movement), <code>BranchSpawnPoint</code>, <code>BranchDamageMultiplier</code> (multiplied by Fork, Chain, Multiply damage; applied by the damage nodes), <code>BranchMarks</code> (marks such as “Critical”, applied by Mark branch), <code>IsCastPhase</code>, <code>SpellTargets</code> (targeted skills), the source listeners (listener anti-loop).</p>
+<p><strong>Aim</strong> (<code>SkillAim</code>, <code>context.Aim</code>): frozen by the execution at cast (end of the cast time included) from <code>caster.PointedTarget</code>, or given by the caller (<code>SkillCastOptions.Aim</code>, <code>SkillExecution.SetAim</code>: AI, code, server). It carries the aim point (<code>Point</code>, null if nothing is aimed at), the direction from the caster toward this point (<code>Direction</code>), the pointed entity (<code>Entity</code>) and the caster's position (<code>Origin</code>). The Aim node (Targeting) replaces the one of its branch (<code>SetAimPoint</code>).</p>
+<p><strong>Anchors and directions</strong>: a position configured on a node is a <code>SkillAnchor</code> (caster, aim point, received target, each received target, module body, impact point, named object; offset in the aim frame, max range), a direction a <code>SkillDirection</code> (toward the aim point, caster forward, toward the received target, away from the caster, random; branch direction takes priority, angle offset). A single resolution: <code>SkillAnchor.Resolve</code> / <code>TryResolve</code>, <code>SkillDirection.Resolve(caster, context, anchor)</code>. The field limits the sources offered with <code>[AnchorSources]</code> / <code>[DirectionSources]</code>. A direction defaults to toward the aim point, for a node created in the editor as for one built from code.</p>
+<p>Rules:</p>
+<ul>
+<li>A node never reads <code>caster.PointedTarget</code>: it reads <code>context.Aim</code>. Only the Aim node and the channeled beam (“Follow the live aim” option) read the mouse again, through <code>SkillAim.Live</code>.</li>
+<li>A position or a direction configured on a node is a <code>SkillAnchor</code> / <code>SkillDirection</code>, never a new enum.</li>
+<li>A node reads and filters <strong>the targets of its context</strong>, never those of another branch.</li>
+<li>Fire your outputs with <strong>the context received</strong> (<code>ExecuteChainedNodes(this, caster, context)</code>).</li>
+<li>An event node adds the event's target to a <strong>dedicated branch</strong> (<code>context.CreateBranch()</code>), not to its own context (otherwise targets accumulate from one event to the next).</li>
+<li>A module writes its prefab and its body in <strong>its</strong> branch (<code>context.MainSkillPrefab</code>, <code>MainBody</code>), which its listeners receive.</li>
+<li><code>SetData</code> is for skill variables (Store value) and shared values. Data specific to a branch goes in <code>SetBranchData</code>.</li>
+</ul>
+<h2 id="during-the-execution">During the execution<a class="headerlink" href="#during-the-execution" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>World tick</strong> (<code>SkillWorld</code>, step 6b): <code>ExecutionStepper</code> calls <code>execution.Step(clock)</code> on each active execution. <code>Step</code> advances the cast time and the hold at the caster's pace, then calls <code>OnSimulationStep</code> on each active instance <strong>that did not start during this tick</strong> (<code>StartTick</code>). This is where persistent nodes outside modules count.</li>
+<li><strong>Turn</strong> (turn-based, <code>SkillCaster.AdvanceTurn</code>): <code>execution.AdvanceTurn()</code> advances a cast started in turn-based mode by one turn (<code>CastInTurns</code>; the world tick no longer advances it) and fires the skill on the turn that reaches its duration, then calls <code>OnTurnAdvanced</code> on each active instance that did not start during this turn.</li>
+<li><strong>Module bodies</strong>: advanced at step 2 of the tick (<code>OnBodyStep</code>, see <a href="../writing-a-node/#modules">Writing a node</a>).</li>
+<li><strong>Frame</strong> (<code>UnleashSkillManager.Update</code>): <code>execution.Update()</code> calls <code>OnRuntime</code> (visual only), then marks the execution completed if all its instances are and it is no longer casting.</li>
+</ul>
+<h2 id="end-of-execution">End of execution<a class="headerlink" href="#end-of-execution" title="Permanent link">&para;</a></h2>
+<p><code>AreAllNodesCompleted()</code>: no active instance. Listeners (On event, On tick), flying modules and persistent nodes keep it alive. A completed execution is cleaned up (<code>Cleanup</code>: <code>OnEnd</code> of the remaining instances, stop of the tracked presentation) and removed in the same <code>Update</code>.</p>
+<p>The effects applied to a target (status, burn) live in the target's <code>StatusContainer</code>, not in the execution: the Fireball ends on impact, the burn goes on.</p>
+<h2 id="cancellation">Cancellation<a class="headerlink" href="#cancellation" title="Permanent link">&para;</a></h2>
+<p><code>SkillExecution.Cancel()</code>:</p>
+<ol>
+<li>Marks <code>IsCanceled</code>; during the cast time, refunds the cost and resets the cooldown (<code>RefundLaunch</code>), likewise during an aim.</li>
+<li>Marks <strong>all</strong> instances completed, then calls their <code>OnEnd</code>, most recent first (listeners before their module).</li>
+<li>Stops the tracked presentation (<code>StopAllPresentation</code>).</li>
+</ol>
+<p>After <code>Cancel</code>, a late <code>CompleteNodeInstance</code> or <code>ExecuteChainedNodes</code> (callback) is ignored, and <code>ExecuteNodeAndChain</code> no longer starts anything.</p>
+<p>Who cancels:</p>
+<table>
+<thead>
+<tr>
+<th>Call</th>
+<th>Case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SkillCaster.CancelSkill(graph)</code> / <code>UnleashSkillManager.CancelSkillExecutions</code></td>
+<td>The game interrupts an aura, a channeling</td>
+</tr>
+<tr>
+<td><code>SkillCaster.CancelSlot(slot)</code></td>
+<td>Cancellation by slot</td>
+</tr>
+<tr>
+<td><code>SkillCaster.CancelSkillsOnDeath()</code></td>
+<td>Death or disabling of the caster; spares the skills whose <code>CancelOnCasterDeath</code> is false (passives are always canceled)</td>
+</tr>
+<tr>
+<td><code>SkillExecution.Interrupt()</code></td>
+<td>Interrupted cast (hit taken, stun depending on <code>InterruptionMode</code>)</td>
+</tr>
+<tr>
+<td><code>CancelTargeting()</code></td>
+<td>Aim canceled: the Targeting node reads the request (<code>ConsumeTargetingCancel</code>), refunds the cost and ends without outputs (it is not a <code>Cancel</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><code>Hold()</code> / <code>Release()</code> cancel nothing: they change <code>IsHeld</code>, which the nodes that use it read at their step (Beam <code>stopOnRelease</code>, charge).</p>
+<p>The effects already applied remain; modules remove their body in their <code>OnEnd</code>.</p>
+<h2 id="errors-exceptions-and-loops">Errors: exceptions and loops<a class="headerlink" href="#errors-exceptions-and-loops" title="Permanent link">&para;</a></h2>
+<p><strong>An exception thrown by a node cancels its execution, and only it.</strong> The engine catches it around each call into node code: <code>OnStart</code> (in <code>ExecuteNodeAndChain</code>), <code>OnSimulationStep</code>, <code>OnTurnAdvanced</code> and <code>OnRuntime</code> (per instance), a module's body step, impacts and listeners (<code>ModuleBody</code>), the result of a node's query, a deferred action, an On event handler. It then:</p>
+<ol>
+<li>logs it (<code>Debug.LogException</code>, with the skill as context);</li>
+<li>ends the failing instance without outputs;</li>
+<li>cancels the execution (<code>Cancel</code>), which keeps the first exception in <code>SkillExecution.Fault</code>.</li>
+</ol>
+<p>The other executions, the rest of the tick (statuses, cooldowns, regeneration, combos, locks, movements, history) and the turn manager go on: <code>TurnReady</code> is still raised, since a canceled execution is completed. An exception thrown by an <code>OnEnd</code> during a cancellation is logged and does not prevent the other instances from ending.</p>
+<p>The world isolates its own listeners the same way (<code>IBodyStepListener</code>, <code>IQueryListener</code>, <code>IBodyHitListener</code>, <code>IWorldStepListener</code>): an exception goes to <code>SkillWorld.ExceptionHandler</code> (<code>Debug.LogException</code> by default) and the tick goes on with the next listener. The subscribers of <code>GameEventBus</code>, <code>ExecutionStarted</code>, <code>ExecutionEnded</code> and <code>TurnReady</code> are called one by one: one that throws is logged and the others are still called.</p>
+<p><strong>A loop of instant nodes is stopped.</strong> A node that starts its outputs during its own <code>OnStart</code> (instant node, Delay of 0, first fire of a Repeat) nests the starts: a loop of such nodes would never end. Beyond <code>SkillGraphModel.MaxStartDepth</code> (256) nested starts, all skills included (Cast skill), the engine logs an error, refuses every start until the outermost one returns, and cancels the executions involved. The flow analysis warns before: <code>W115</code> on each node of the loop (<code>NodeModel.StartsOutputsDuringStart</code>), and the editor refuses to connect a node to itself.</p>
+<p><strong>A node that never completes</strong> (it returns no runtimeData without calling <code>CompleteNodeInstance</code>) keeps its execution alive forever: in the editor and in a Development Build, the execution reports it once after <code>SkillExecution.StuckInstanceDelay</code> seconds.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

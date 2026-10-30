@@ -1,0 +1,2395 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Créer des sorts par graphe de nodes dans Unity">
+      
+      
+      
+        <link rel="canonical" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/gameplay/">
+      
+      
+        <link rel="prev" href="../presentation/">
+      
+      
+        <link rel="next" href="../static-state/">
+      
+      
+        
+          <link rel="alternate" href="../../../technical/gameplay/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="fr">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Statuts, événements, dégâts - UnleashSkill</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#statuts-evenements-degats" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../" title="UnleashSkill" class="md-header__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UnleashSkill
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Statuts, événements, dégâts
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../technical/gameplay/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Démarrage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../configuration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sorts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/nodes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Référence des nodes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../recipes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Recettes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dépannage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technique
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="UnleashSkill" class="md-nav__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UnleashSkill
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Démarrage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Démarrage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/scene-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mettre en place une scène
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Premier sort (Fireball)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/cast-from-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lancer un sort par code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphe, nodes et ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exécution d'un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/branches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cibles et branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/targeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visée, ancres et directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monde de simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dynamic-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valeurs dynamiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../configuration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entités (stats, teams, types, templates)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/damage-reactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dégâts et réactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/statuses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Événements, marques et tags de sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation et paramètres généraux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../skills/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sorts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paramètres d'un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/slots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emplacements, passifs et combos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Référence des nodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recettes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Recettes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/fireball/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fireball
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technique
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technique
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points d'extension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cast-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cycle d'un cast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-a-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Écrire un node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monde de simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostiquer et mesurer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts, événements, dégâts
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts, événements, dégâts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ou-vit-le-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Où vit le code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statuts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statuts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-comportement-de-statut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un comportement de statut
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-de-degats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline de dégâts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline de dégâts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formule-de-degats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formule de dégâts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Événements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-evenement-natif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un événement natif
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valeurs-dynamiques-et-formules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valeurs dynamiques et formules
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État statique et aperçu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ou-vit-le-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Où vit le code
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#statuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Statuts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Statuts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-comportement-de-statut" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un comportement de statut
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipeline-de-degats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pipeline de dégâts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pipeline de dégâts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formule-de-degats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formule de dégâts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Événements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ajouter-un-evenement-natif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un événement natif
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#valeurs-dynamiques-et-formules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valeurs dynamiques et formules
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="statuts-evenements-degats">Statuts, événements, dégâts<a class="headerlink" href="#statuts-evenements-degats" title="Permanent link">&para;</a></h1>
+<p>Version utilisateur : <a href="../../configuration/statuses/">Statuts</a>, <a href="../../configuration/events/">Événements</a>, <a href="../../configuration/damage-reactions/">Dégâts et réactions</a>, <a href="../../concepts/dynamic-values/">Valeurs dynamiques</a>.</p>
+<p>Principe : <strong>rien de gameplay en dur</strong>. Un besoin s'exprime d'abord en <strong>donnée de configuration</strong> (statut, événement, catégorie, tag, marque) portée par un <strong>comportement générique</strong>. Un nouveau comportement codé doit servir plusieurs données ; jamais de node spécialisé (pas de « OnCrit », mais Chance + Marquer la branche + Sur événement).</p>
+<h2 id="ou-vit-le-code">Où vit le code<a class="headerlink" href="#ou-vit-le-code" title="Permanent link">&para;</a></h2>
+<p>Chemins relatifs à <code>Assets/UnleashSkill/Runtime/</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Sujet</th>
+<th>Données (configuration)</th>
+<th>Runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Statuts</td>
+<td><code>Configuration/StatusDefinition.cs</code>, <code>StatusCategory.cs</code>, <code>StatusBehaviors.cs</code>, <code>InterceptionStatusBehaviors.cs</code></td>
+<td><code>Simulation/StatusContainer.cs</code>, <code>StatusInstance.cs</code>, <code>StatusStepper.cs</code></td>
+</tr>
+<tr>
+<td>Événements</td>
+<td><code>Configuration/EventDefinition.cs</code> (natifs dans <code>Natives</code>)</td>
+<td><code>Simulation/GameEvent.cs</code>, <code>GameEventBus.cs</code>, <code>GameEvents.cs</code> (émetteurs natifs)</td>
+</tr>
+<tr>
+<td>Dégâts</td>
+<td>Types de dégâts, stats, formule de dégâts (<code>ConfigurationData</code>)</td>
+<td><code>Simulation/DamageFormula.cs</code>, <code>Simulation/DamagePipeline.cs</code>, <code>Execution/DamageEvent.cs</code>, <code>EntityDeathScope.cs</code></td>
+</tr>
+<tr>
+<td>Réactions</td>
+<td><code>Configuration/ReactionDefinition.cs</code>, <code>ReactionProfile*.cs</code></td>
+<td><code>Nodes/Actions/ReactionModel.cs</code></td>
+</tr>
+<tr>
+<td>Blocages</td>
+<td>Comportement <code>Lock</code></td>
+<td><code>Simulation/EntityLocks.cs</code>, <code>Core/EntityLockStepper.cs</code></td>
+</tr>
+<tr>
+<td>Valeurs</td>
+<td>—</td>
+<td><code>Execution/ValueSource.cs</code>, <code>Execution/ValueFormula.cs</code></td>
+</tr>
+<tr>
+<td>Nodes</td>
+<td>—</td>
+<td>Appliquer / Retirer / Modifier statut, Émettre événement, Sur événement (<code>OnGameEventModel</code>), Dégâts simples / avancés</td>
+</tr>
+</tbody>
+</table>
+<h2 id="statuts">Statuts<a class="headerlink" href="#statuts" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Une <code>StatusDefinition</code> (UUID) porte : positif / négatif, catégorie, stacks max, durée, politique de cumul, présentation, et une <strong>liste polymorphe de comportements</strong> (<code>[SerializeReference] behaviors</code>).</li>
+<li>Le porteur est un <code>IStatusHolder</code> (<code>SkillTarget</code>) : son <code>StatusContainer</code> (<code>Apply</code>, <code>Remove</code>, <code>RemoveWhere</code>, <code>AddDuration</code>, <code>AddStacks</code>, <code>Has</code>, <code>GetStacks</code>, <code>IsImmuneTo</code>, <code>BlocksSpell</code>…).</li>
+<li><code>StatusStepper</code> (écouteur d'étape du monde) fait avancer les durées au pas du <strong>porteur</strong> (<code>clock.DeltaTimeFor(porteur)</code>), puis <code>StatusBehavior.Step</code>.</li>
+<li>Application et retrait émettent les événements natifs Statut appliqué / Statut retiré (avec <code>StatusRemovalReason</code>).</li>
+<li>Rendements décroissants par catégorie (<code>StatusCategory</code>), modulés par le profil de réaction de l'entité (boss).</li>
+</ul>
+<p>Comportements existants : <code>PeriodicStatusBehavior</code> (dégâts ou soin par stack, par le pipeline), <code>StatModifierStatusBehavior</code> (additif, %, ou remplacement figé), <code>LockStatusBehavior</code>, <code>UntargetableStatusBehavior</code>, <code>IntangibleStatusBehavior</code>, <code>ImmunityStatusBehavior</code>, <code>RemoveOnEventStatusBehavior</code>, <code>EventOnlyStatusBehavior</code>, et les interceptions : <code>DamageTakenMultiplierStatusBehavior</code>, <code>AbsorbHitsStatusBehavior</code>, <code>RedirectStatusBehavior</code>, <code>MinimumHealthStatusBehavior</code>, <code>ReflectStatusBehavior</code>.</p>
+<h3 id="ajouter-un-comportement-de-statut">Ajouter un comportement de statut<a class="headerlink" href="#ajouter-un-comportement-de-statut" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Classe <code>[Serializable]</code> dérivée de <code>StatusBehavior</code> dans <code>Configuration/</code> (assembly <code>UnleashSkill</code>, sérialisée par référence : ne plus la renommer ni la déplacer ensuite).</li>
+<li><code>DisplayName</code>, champs publics avec <code>[Tooltip]</code> ; un nombre réglable est un <code>ValueSource</code> (évalué avec l'instance : voir <code>InterceptionFilter.Evaluate</code>).</li>
+<li>Crochets utiles : <code>CreateState</code> (état par application), <code>OnApplied</code>, <code>OnStacksChanged</code>, <code>OnReapplied</code>, <code>OnRemoved</code>, <code>Step(instance, state, deltaTime)</code>.</li>
+<li>Le panneau Statuts du menu principal le propose automatiquement (<code>TypeCache.GetTypesDerivedFrom&lt;StatusBehavior&gt;</code> dans <code>StatusConfigPanel</code>).</li>
+<li>S'il agit sur les dégâts : l'appeler explicitement à sa place dans <code>DamagePipeline.Intercept</code> (<code>statuses.ForEach&lt;TonComportement&gt;(…)</code>). Il n'y a pas de crochet générique : l'ordre du pipeline est une règle de gameplay.</li>
+<li>Tests EditMode (porteur de test, <code>StatusContainer</code>, horloge <code>SimulationClock.Fixed</code>), puis un sort qui l'utilise, lancé dans un monde de test.</li>
+</ol>
+<h2 id="pipeline-de-degats">Pipeline de dégâts<a class="headerlink" href="#pipeline-de-degats" title="Permanent link">&para;</a></h2>
+<p><code>DamagePipeline</code> est le <strong>seul</strong> chemin des dégâts : Dégâts simples, Dégâts avancés et ticks des statuts périodiques y passent, sous forme de <code>DamageHit</code> (attaquant, cible, montant, type, node source, branche, statut source, critique). Ordre (<code>Apply</code>) :</p>
+<ol>
+<li>Montant calculé par la formule de dégâts (voir ci-dessous).</li>
+<li>Immunités et écouteurs avant coup (<code>SkillTarget.BeforeHitListener</code>) : bloqué, rien de plus.</li>
+<li>Multiplicateur de dégâts reçus (produit des facteurs).</li>
+<li>Absorption : le premier statut avec une charge absorbe tout le coup.</li>
+<li>Redirection : chaque redirection prend son % de ce qui reste.</li>
+<li>Renvoi : son % mis de côté pour l'attaquant.</li>
+<li>Application aux stats, bornée par PV minimum.</li>
+<li>Écouteurs après coup, événements Coup / Kill, puis mort de la cible (<code>EntityDeathScope</code> : Mort, puis annulation de ses sorts).</li>
+<li>Parts redirigées et renvoyées, comme coups secondaires (étapes 2 à 8, sans redirection ni renvoi : pas de boucle).</li>
+</ol>
+<p>Les écouteurs de coup reçoivent un <code>OnHitData</code> (<code>Amount</code>, <code>Origin</code>, <code>DamageType</code>, <code>SpellTagUuids</code>, <code>AffectedStats</code>) ; un écouteur avant coup bloque le coup en passant <code>ListenerState.Passed</code> à false. Les écouteurs de tag (<code>SkillTarget.BeforeTagApply</code>, <code>OnTagApply</code>) reçoivent un <code>OnTagApplyData</code> (<code>TagToApply</code>), les changements de stat (<code>EntityStats.StatChanged</code>) un <code>StatChangedData</code> (<code>StatUuid</code>, <code>ValueBefore</code>, <code>ValueAfter</code>, <code>HasMaximumValue</code>, <code>MaximumValue</code>, <code>Origin</code>).</p>
+<p>Un nouveau node de dégâts calcule son montant avec <code>ConfigurationData.GetDamageFormula().Compute(...)</code>, construit un <code>DamageHit</code> (montant et marques du <code>DamageRoll</code>) et appelle <code>DamagePipeline.Apply</code> ; il ne modifie jamais une stat de vie directement.</p>
+<h3 id="formule-de-degats">Formule de dégâts<a class="headerlink" href="#formule-de-degats" title="Permanent link">&para;</a></h3>
+<p><code>DamageFormula</code> (champ <code>damageFormula</code> de la configuration, panneau <strong>Formule de dégâts</strong>) est le seul calcul du montant, partagé par Dégâts simple, Dégâts avancé, les ticks des statuts périodiques. Le montant part de la <strong>base du node</strong> (montant, stats de Dégâts avancé, montant du tick × stacks), puis chaque étape déclarée (<code>DamageStepDefinition</code> : UUID, nom, opération) s'applique dans l'ordre de la liste. Aucune étape n'est propre au code : l'opération est générique.</p>
+<table>
+<thead>
+<tr>
+<th>Opération (<code>DamageStepOperation</code>)</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DamageTypeModifiers</code></td>
+<td><code>DamageType.ApplyModifiers</code> : <code>modifiedByStat</code> sur le montant courant (stats de l'attaquant ; sans attaquant, ignorée)</td>
+</tr>
+<tr>
+<td><code>NodeAndBranchMultipliers</code></td>
+<td>multiplicateur du node (Dégâts avancé) × <code>BranchDamageMultiplier</code></td>
+</tr>
+<tr>
+<td><code>Add</code> / <code>Multiply</code></td>
+<td>ajoute / multiplie par <code>value</code> (<code>ValueSource</code>)</td>
+</tr>
+<tr>
+<td><code>Roll</code></td>
+<td>tirage de <code>chance</code> (%, aléatoire de l'exécution) ; réussi d'office si la branche porte <code>markUuid</code> et <code>markForcesSuccess</code>. Réussi : montant × <code>value</code>, <code>markUuid</code> posée sur le coup</td>
+</tr>
+</tbody>
+</table>
+<p>Une étape avec <code>appliesToPeriodic</code> à faux est sautée par les ticks. La formule par défaut (<code>CreateDefaultSteps</code>) : type de dégâts, multiplicateurs, puis le <strong>Critique</strong>, une étape <code>Roll</code> comme une autre (0 %, × 2, marque Critique, pas sur les ticks), sous l'UUID <code>DamageFormula.CriticalStepUuid</code> que reprennent les anciens critiques internes des nodes. Un node surcharge la chance et la valeur d'une étape par UUID (<code>DamageStepOverride</code>, champ <code>damageStepOverrides</code>).</p>
+<p>Les marques des tirages réussis sont portées par le coup (<code>DamageHit.Marks</code>, <code>DamageEvent.Marks</code>) et ajoutées aux marques de l'événement Coup / Kill : un écouteur filtre par marque (<code>HasMark</code>), quelle qu'elle soit. Le critique se lit par sa marque (<code>HasMark</code>, marque de l'étape Critique) : <code>IsCritical</code> est retiré. Un effet par type de dégâts passe par un écouteur Coup filtré par type ou un statut Multiplicateur de dégâts reçus (les anciennes conditions des types de dégâts sont retirées).</p>
+<p>Ajouter une opération : une valeur de <code>DamageStepOperation</code> traitée dans <code>DamageFormula.Compute</code> et ses champs affichés par <code>DamageStepDefinitionDrawer</code> ; même vocabulaire que les phases de calcul prévues pour les stats (base = <code>Set</code>, puis opérations ordonnées), pas de second moteur.</p>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>EventDefinition</code> : <strong>natifs</strong> (UUID fixes dans le code, <code>EventDefinition.Natives</code>, non supprimables) et <strong>libres</strong> (configuration). Natifs : <code>event-hit</code> (Coup), <code>event-kill</code>, <code>event-death</code>, <code>event-status-applied</code>, <code>event-status-removed</code>, <code>event-spell-cast</code>, <code>event-cast-interrupted</code>, <code>event-summon-created</code>, <code>event-obstacle-contact</code>.</li>
+<li><code>GameEvent</code> : définition, source, sujet, exécution source, tags du sort, marques de la branche, valeur, statut et stacks, raison, position.</li>
+<li><code>GameEventBus</code> (<code>UnleashSkillManager.World.Events</code>) : <code>Subscribe(uuid, handler)</code>, <code>Unsubscribe</code>, <code>Emit</code>. <code>Emit</code> notifie d'abord les statuts du sujet et de la source (Retrait sur événement), puis les abonnés. Profondeur et imbrication bornées (anti-boucle).</li>
+<li>Le jeu émet un événement libre par <code>UnleashSkillManager.EmitGameEvent(uuid, source, sujet, valeur)</code> (parade, esquive réussie…).</li>
+<li>Écouteur dans un graphe : <code>OnGameEventModel</code> (Sur événement), filtres par rôle (moi, alliés, ennemis, invocations), tags, marques ; une branche par événement, cible = sujet ou source, valeur dans <code>EventValueKey</code>.</li>
+</ul>
+<h3 id="ajouter-un-evenement-natif">Ajouter un événement natif<a class="headerlink" href="#ajouter-un-evenement-natif" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Constante d'UUID et entrée <code>Native(...)</code> dans <code>EventDefinition</code> (nom, description de la source, du sujet et de la valeur).</li>
+<li>Émetteur dans <code>GameEvents</code> (<code>RaiseXxx</code>, sur le modèle de <code>RaiseSkillCast</code>) appelé au bon endroit du moteur. Le moteur émet, jamais un node spécialisé.</li>
+<li>Si l'événement a un filtre propre (statut, type de dégâts), l'ajouter au filtre de <code>OnGameEventModel</code>.</li>
+<li>Tests EditMode sur le bus (abonné de test) et un cas Sur événement dans un sort lancé.</li>
+</ol>
+<h2 id="valeurs-dynamiques-et-formules">Valeurs dynamiques et formules<a class="headerlink" href="#valeurs-dynamiques-et-formules" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>ValueSource</code> : champ numérique d'un node. Modes (<code>ValueSourceMode</code>) : fixe, stat (lanceur ou cible ; courante, max, %), valeur de l'exécution (nombre de cibles, derniers dégâts, variable du sort, stacks retirés, charge…), distance, stacks d'un statut, valeur d'événement, formule. Puis <code>valeur × multiplier + add</code>, bornée si demandé. <code>DependsOnTarget</code> : le node l'évalue par cible. Hors d'une exécution (régénération native d'une stat : <code>CustomStat.RegenerationAmount</code> et <code>RegenerationInterval</code>), <code>EvaluateForHolder(stats, owner)</code> évalue pour l'entité qui porte la stat : elle est lanceur et cible, ses stats sont lues dans <code>stats</code> (même sans owner), les valeurs d'exécution, d'événement et la distance valent 0.</li>
+<li><code>ValueFormula</code> : expression analysée une fois (<code>Parse</code>), évaluée sans allocation. Opérateurs <code>+ - * / % ^</code>, <code>min</code>, <code>max</code>, <code>clamp</code>, <code>Stat(nom[, Caster|Target][, Current|Max|Percent])</code>, <code>Stacks(nom[, Target|Caster])</code>, <code>Var(nom)</code>, <code>Random()</code> (0 à 100 exclu, <code>SkillExecution.Random</code> ; 0 hors d'une exécution), valeurs natives (<code>Targets</code>, <code>LastDamage</code>, <code>Distance</code>…). Noms lus sans casse ni accents, sauf les variables. Division par zéro ou résultat non fini : 0. Le vocabulaire français des versions précédentes (<code>Lanceur</code>, <code>Cible</code>, <code>Courante</code>, <code>Pourcent</code>, <code>Hasard</code>, <code>Cibles</code>, <code>DerniersDegats</code>…, <code>et</code>, <code>ou</code>, <code>non</code>) reste accepté comme alias.</li>
+<li>Conditions : comparateurs <code>&lt; &gt; &lt;= &gt;= = !=</code> (<code>==</code> accepté) puis <code>not</code>, <code>and</code>, <code>or</code>, tous sous <code>+ -</code> (grammaire : or → and → not → comparaison → somme). Une comparaison vaut 1 ou 0, une valeur non nulle est vraie ; égalité à <code>ValueFormula.EqualityTolerance</code> près (<code>SimulationClock.Epsilon</code>) ; comparaisons non associatives (<code>1 &lt; x &lt; 3</code> : erreur positionnée) ; <code>and</code> / <code>or</code> sans court-circuit (forme postfixée). <code>and</code>, <code>or</code>, <code>not</code> et leurs alias sont réservés (<code>Var(and)</code> pour une variable de ce nom). Vérifier condition (<code>ConditionalCheckModel</code>, <code>ConditionCheckType.Formula</code>) évalue sa formule par cible si <code>DependsOnTarget</code>, une fois sinon ; un champ texte de formule prend <code>[SkillFormula]</code> (aide et erreurs dans l'éditeur, <code>SkillFormulaDrawer</code>).</li>
+<li>Une nouvelle valeur native : un membre de <code>ExecutionValueKind</code>, lu par <code>ValueSource</code>, et son entrée dans la table <code>Natives</code> de <code>ValueFormula</code> (nom affiché → source), qui alimente <code>NativeNames</code> et l'aide de l'éditeur.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

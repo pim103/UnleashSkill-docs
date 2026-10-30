@@ -1,0 +1,2442 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Créer des sorts par graphe de nodes dans Unity">
+      
+      
+      
+        <link rel="canonical" href="https://pim103.github.io/UnleashSkill-docs/fr/getting-started/cast-from-code/">
+      
+      
+        <link rel="prev" href="../first-skill/">
+      
+      
+        <link rel="next" href="../../concepts/">
+      
+      
+        
+          <link rel="alternate" href="../../../getting-started/cast-from-code/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="fr">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Lancer un sort par code - UnleashSkill</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lancer-un-sort-par-code" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../" title="UnleashSkill" class="md-header__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UnleashSkill
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lancer un sort par code
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../getting-started/cast-from-code/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Démarrage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../configuration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sorts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/nodes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Référence des nodes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../recipes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Recettes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dépannage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../technical/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technique
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="UnleashSkill" class="md-nav__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UnleashSkill
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Démarrage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Démarrage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scene-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mettre en place une scène
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../first-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Premier sort (Fireball)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lancer un sort par code
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lancer un sort par code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lancer-un-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancer un sort
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#par-emplacements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Par emplacements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-visee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La visée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verrouiller-votre-controleur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verrouiller votre contrôleur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrompre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrompre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tour-par-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tour par tour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faire-mourir-une-entite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faire mourir une entité
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphe, nodes et ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exécution d'un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/branches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cibles et branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/targeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visée, ancres et directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monde de simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dynamic-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valeurs dynamiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../configuration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entités (stats, teams, types, templates)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/damage-reactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dégâts et réactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/statuses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Événements, marques et tags de sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation et paramètres généraux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../skills/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sorts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paramètres d'un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/slots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emplacements, passifs et combos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Référence des nodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recettes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Recettes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/fireball/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fireball
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../technical/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technique
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technique
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points d'extension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/cast-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cycle d'un cast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/writing-a-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Écrire un node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monde de simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostiquer et mesurer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/gameplay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts, événements, dégâts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/static-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État statique et aperçu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../technical/data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lancer-un-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lancer un sort
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#par-emplacements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Par emplacements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-visee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        La visée
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verrouiller-votre-controleur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verrouiller votre contrôleur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interrompre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interrompre
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tour-par-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tour par tour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faire-mourir-une-entite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Faire mourir une entité
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="lancer-un-sort-par-code">Lancer un sort par code<a class="headerlink" href="#lancer-un-sort-par-code" title="Permanent link">&para;</a></h1>
+<p>Le <code>SkillTester</code> sert à essayer. Dans un vrai jeu, ce sont vos contrôles (joueur) ou votre IA (monstres) qui lancent les sorts, par l'API du <code>SkillCaster</code>.</p>
+<h2 id="lancer-un-sort">Lancer un sort<a class="headerlink" href="#lancer-un-sort" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnleashSkill</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnleashSkill.Execution</span><span class="p">;</span>
+
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerSkills</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[SerializeField]</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="n">SkillCaster</span><span class="w"> </span><span class="n">caster</span><span class="p">;</span>
+<span class="w">    </span><span class="na">[SerializeField]</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="n">SkillGraphModel</span><span class="w"> </span><span class="n">fireball</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Update</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">Q</span><span class="p">))</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="n">SkillCastResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">Cast</span><span class="p">(</span><span class="n">fireball</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">SkillExecution</span><span class="w"> </span><span class="n">execution</span><span class="p">);</span>
+<span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">result</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">SkillCastResult</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+<span class="w">                </span><span class="n">Debug</span><span class="p">.</span><span class="n">Log</span><span class="p">(</span><span class="s">$"Lancement refusé : {result}"</span><span class="p">);</span><span class="w">   </span><span class="c1">// en recharge, pas assez de mana, étourdi…</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Input System</p>
+<p><code>Input.GetKeyDown</code> appartient à l'ancien Input Manager : avec le seul package Input System actif (<strong>Project Settings → Player → Active Input Handling</strong> : <em>Input System Package (New)</em>), il lève une exception. Lisez alors la touche par l'Input System :</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine.InputSystem</span><span class="p">;</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">Keyboard</span><span class="p">.</span><span class="n">current</span><span class="p">.</span><span class="n">qKey</span><span class="p">.</span><span class="n">wasPressedThisFrame</span><span class="p">)</span>
+<span class="w">    </span><span class="n">caster</span><span class="p">.</span><span class="n">Cast</span><span class="p">(</span><span class="n">fireball</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">SkillExecution</span><span class="w"> </span><span class="n">execution</span><span class="p">);</span>
+</code></pre></div>
+<p>Les exemples de cette page utilisent <code>Input</code> ; le même remplacement s'y applique (<code>wasReleasedThisFrame</code> pour <code>GetKeyUp</code>).</p>
+</div>
+<p><code>Cast</code> vérifie tout avant de lancer : actions bloquées (étourdissement), temps de recharge, coût. Le résultat donne la raison d'un refus. Pour griser un bouton sans rien lancer, utilisez <code>CanCast(graph)</code>.</p>
+<h2 id="par-emplacements">Par emplacements<a class="headerlink" href="#par-emplacements" title="Permanent link">&para;</a></h2>
+<p>Avec un composant <code>SkillSlots</code> sur le lanceur, on lance par numéro d'emplacement. C'est la méthode recommandée : elle gère les combos, les passifs et les emplacements remplacés.</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CastSlot(slot)</code></td>
+<td>Lance le sort de l'emplacement.</td>
+</tr>
+<tr>
+<td><code>PressSlot(slot)</code> / <code>ReleaseSlot(slot)</code></td>
+<td>Appui et relâchement d'une touche : nécessaires pour les sorts <strong>chargés</strong> (le sort part au relâchement) et <strong>maintenus</strong> (canalisation).</td>
+</tr>
+<tr>
+<td><code>CanCastSlot(slot)</code></td>
+<td>Vérifie sans lancer.</td>
+</tr>
+<tr>
+<td><code>CancelSlot(slot)</code></td>
+<td>Annule l'exécution lancée par la dernière pression.</td>
+</tr>
+<tr>
+<td><code>GetCooldownRemaining(graph)</code></td>
+<td>Temps restant avant relance (secondes, ou tours en tour par tour).</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">slot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">slot</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="n">slot</span><span class="o">++</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyDown</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">Alpha1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slot</span><span class="p">))</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">PressSlot</span><span class="p">(</span><span class="n">slot</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetKeyUp</span><span class="p">(</span><span class="n">KeyCode</span><span class="p">.</span><span class="n">Alpha1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">slot</span><span class="p">))</span><span class="w">   </span><span class="n">caster</span><span class="p">.</span><span class="n">ReleaseSlot</span><span class="p">(</span><span class="n">slot</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="la-visee">La visée<a class="headerlink" href="#la-visee" title="Permanent link">&para;</a></h2>
+<p>Les sorts qui partent vers un point ou une cible lisent la <strong>visée</strong> du lanceur, que votre contrôleur remplit à chaque frame :</p>
+<div class="highlight"><pre><span></span><code><span class="n">PointedTarget</span><span class="w"> </span><span class="n">aim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">PointedTarget</span><span class="p">;</span>
+<span class="n">aim</span><span class="p">.</span><span class="n">Position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">point</span><span class="p">;</span><span class="w">                       </span><span class="c1">// point visé (Vector3.positiveInfinity : rien)</span>
+<span class="n">aim</span><span class="p">.</span><span class="n">Enemy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">collider</span><span class="p">.</span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">SkillTarget</span><span class="o">&gt;</span><span class="p">();</span>
+</code></pre></div>
+<p><code>PointedTarget</code> a aussi <code>Ally</code> (allié pointé), <code>Spell</code> (corps de module d'un autre sort pointé) et <code>Selection</code> (mode tour par tour, plus bas).</p>
+<p>La visée est <strong>figée au lancement</strong> (à la fin de l'incantation pour un sort qui en a une) : un projectile parti vers le point visé n'est plus influencé par la souris. Une IA ou un serveur peut donner la visée sans passer par <code>PointedTarget</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="kt">var</span><span class="w"> </span><span class="n">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SkillCastOptions</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="n">Aim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SkillAim</span><span class="p">.</span><span class="n">Toward</span><span class="p">(</span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="n">CollisionPlane</span><span class="p">.</span><span class="n">XZ</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">forward</span><span class="p">,</span><span class="w"> </span><span class="n">cible</span><span class="p">)</span>
+<span class="p">};</span>
+<span class="n">graph</span><span class="p">.</span><span class="n">TryCompute</span><span class="p">(</span><span class="n">caster</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">SkillExecution</span><span class="w"> </span><span class="n">execution</span><span class="p">,</span><span class="w"> </span><span class="n">options</span><span class="p">);</span>
+</code></pre></div>
+<p>Un sort qui contient un node <strong>Visée</strong> (ex-Ciblage) suit la souris jusqu'à la confirmation, puis fige ce point pour la suite du sort ; il attend une confirmation : appelez <code>caster.ConfirmTargeting()</code> au clic, <code>caster.CancelTargeting()</code> au clic droit (le coût est rendu). <code>caster.IsAiming</code> indique qu'une visée est en cours.</p>
+<h2 id="verrouiller-votre-controleur">Verrouiller votre contrôleur<a class="headerlink" href="#verrouiller-votre-controleur" title="Permanent link">&para;</a></h2>
+<p>L'outil déplace une entité pendant un recul, une ruée ou la poussée d'une attaque, et verrouille son déplacement pendant un étourdissement, mais il ne pilote pas votre contrôleur. Votre contrôleur lit les verrous de l'entité et saute son propre déplacement tant qu'elle est verrouillée :</p>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnleashSkill</span><span class="p">;</span>
+
+<span class="na">[RequireComponent(typeof(CharacterController))]</span>
+<span class="k">public</span><span class="w"> </span><span class="k">class</span><span class="w"> </span><span class="nc">PlayerMovement</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">MonoBehaviour</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="na">[SerializeField]</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="n">SkillCaster</span><span class="w"> </span><span class="n">caster</span><span class="p">;</span>
+<span class="w">    </span><span class="na">[SerializeField]</span><span class="w"> </span><span class="k">private</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6f</span><span class="p">;</span>
+<span class="w">    </span><span class="k">private</span><span class="w"> </span><span class="n">CharacterController</span><span class="w"> </span><span class="n">controller</span><span class="p">;</span>
+
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Awake</span><span class="p">()</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">GetComponent</span><span class="o">&lt;</span><span class="n">CharacterController</span><span class="o">&gt;</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">void</span><span class="w"> </span><span class="nf">Update</span><span class="p">()</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="n">Move</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Vector3</span><span class="p">(</span><span class="n">Input</span><span class="p">.</span><span class="n">GetAxisRaw</span><span class="p">(</span><span class="s">"Horizontal"</span><span class="p">),</span><span class="w"> </span><span class="mf">0f</span><span class="p">,</span><span class="w"> </span><span class="n">Input</span><span class="p">.</span><span class="n">GetAxisRaw</span><span class="p">(</span><span class="s">"Vertical"</span><span class="p">)),</span><span class="w"> </span><span class="n">Time</span><span class="p">.</span><span class="n">deltaTime</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">public</span><span class="w"> </span><span class="k">void</span><span class="w"> </span><span class="nf">Move</span><span class="p">(</span><span class="n">Vector3</span><span class="w"> </span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">deltaTime</span><span class="p">)</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Recul, ruée, étourdissement, enracinement, poussée d'une attaque : le sort déplace l'entité (ou rien ne bouge), pas l'entrée</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">caster</span><span class="p">.</span><span class="n">IsMovementLocked</span><span class="p">)</span>
+<span class="w">            </span><span class="k">return</span><span class="p">;</span>
+
+<span class="w">        </span><span class="n">controller</span><span class="p">.</span><span class="n">Move</span><span class="p">(</span><span class="n">Vector3</span><span class="p">.</span><span class="n">ClampMagnitude</span><span class="p">(</span><span class="n">input</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">speed</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">deltaTime</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Propriété</th>
+<th>Vraie tant que</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsMovementLocked</code></td>
+<td>un sort déplace l'entité (option <strong>Lock Controller During Forced Movement</strong>, jusqu'au tick qui suit le dernier déplacement), un statut la verrouille (<em>Stunned</em>, <em>Rooted</em> d'une configuration neuve), une esquive ou une phase d'attaque qui verrouille le déplacement est en cours.</td>
+</tr>
+<tr>
+<td><code>IsActionLocked</code></td>
+<td>l'entité ne peut plus lancer de sort (<em>Stunned</em>, phase d'attaque qui verrouille les actions) : <code>Cast</code> et <code>CanCast</code> refusent déjà (<code>ActionLocked</code>). Lisez-la pour griser la barre de sorts.</td>
+</tr>
+</tbody>
+</table>
+<p>L'événement <code>OnLockChanged</code> est levé au début et à la fin d'un verrou (animation du personnage étourdi, par exemple). Votre code peut verrouiller l'entité lui-même : <code>caster.Lock(source, EntityLockFlags.Movement)</code>, puis <code>caster.Unlock(source)</code>.</p>
+<h2 id="interrompre">Interrompre<a class="headerlink" href="#interrompre" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>caster.CancelSkill()</code> interrompt tous les sorts en cours du lanceur, <code>caster.CancelSkill(graph)</code> ceux d'un sort.</li>
+<li>À la mort ou à la désactivation du lanceur, ses sorts en cours sont annulés, sauf ceux réglés pour lui survivre (voir <a href="../../skills/settings/">Paramètres d'un sort</a>).</li>
+</ul>
+<h2 id="tour-par-tour">Tour par tour<a class="headerlink" href="#tour-par-tour" title="Permanent link">&para;</a></h2>
+<p>En mode tour par tour (configuration, <em>Paramètres généraux</em>), les durées se comptent en <strong>tours</strong> : appelez <code>AdvanceTurn()</code> une fois par tour de chaque entité, par exemple à la fin de son tour. C'est le seul moment où ses effets à durée avancent :</p>
+<ul>
+<li><strong>Lanceur</strong> (<code>caster.AdvanceTurn()</code>) : ses sorts en cours (incantation, zone, rayon canalisé, Délai, Répéter, Timer), ses statuts, puis ses temps de recharge.</li>
+<li><strong>Autre entité</strong> (<code>cible.AdvanceTurn()</code>, un <code>SkillTarget</code>) : ses statuts. La brûlure posée par une Boule de feu avance au tour de la cible qui brûle, pas à celui du lanceur.</li>
+</ul>
+<p>Un champ de durée garde <strong>une seule valeur</strong> : la même se lit en secondes en temps réel et en tours en tour par tour, sans conversion au changement de mode. L'éditeur affiche l'unité selon le mode (« Duration (tours) »). Une durée est arrondie au tour supérieur (0,5 → 1 tour), une cadence est un nombre entier de tours (1 = à chaque tour). Les champs continus (croissance d'une zone, vitesse et portée du <em>Mouvement</em>) sont marqués <strong>visuel seulement</strong> : ils n'ont pas d'effet sur le jeu.</p>
+<p>Un sort se <strong>résout instantanément</strong>, dans l'appel qui le lance : pas de vol de projectile ni de détection dans l'espace. Ses cibles sont celles que le joueur a <strong>sélectionnées</strong> avant le lancement :</p>
+<div class="highlight"><pre><span></span><code><span class="n">caster</span><span class="p">.</span><span class="n">PointedTarget</span><span class="p">.</span><span class="n">Selection</span><span class="p">.</span><span class="n">Clear</span><span class="p">();</span>
+<span class="n">caster</span><span class="p">.</span><span class="n">PointedTarget</span><span class="p">.</span><span class="n">Selection</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">cible</span><span class="p">);</span><span class="w">   </span><span class="c1">// une ou plusieurs entités</span>
+<span class="n">caster</span><span class="p">.</span><span class="n">CastSlot</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w">                          </span><span class="c1">// dégâts, statuts… appliqués avant le retour</span>
+</code></pre></div>
+<p>Sans liste, l'ennemi visé (<code>PointedTarget.Enemy</code>), puis l'allié visé (<code>PointedTarget.Ally</code>), font office de sélection.</p>
+<table>
+<thead>
+<tr>
+<th>Module</th>
+<th>En tour par tour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Projectile, Corps de sort</td>
+<td>Touche directement les entités sélectionnées. Son <em>Au contact</em> garde son filtre (ennemi, allié) et son nombre de cibles : une Boule de feu à 1 cible touche la première sélectionnée.</td>
+</tr>
+<tr>
+<td>Zone d'effet</td>
+<td>Une activation au lancement sur les entités sélectionnées (où qu'elles soient). Avec une durée, une activation à chaque tour de sa cadence, sur les <strong>mêmes</strong> entités (celles du lancement), puis la zone se termine à la fin de sa durée en tours.</td>
+</tr>
+<tr>
+<td>Rayon</td>
+<td><em>Instant</em> : un tir. <em>Delayed</em> : un tir après son délai en tours. <em>Channeled</em> : un tir au lancement puis un à chaque tour de sa cadence pendant sa durée en tours. Toujours sur les entités sélectionnées au lancement.</td>
+</tr>
+<tr>
+<td>Attaque</td>
+<td>Se résout dans le tour où elle est lancée : ses phases s'enchaînent aussitôt (<em>Phase d'attaque</em> entend chacune), l'impact touche une fois chaque entité sélectionnée, où qu'elle soit, puis l'attaque se termine. Les durées de ses phases ne règlent que la relecture ; le lanceur ne bouge pas.</td>
+</tr>
+<tr>
+<td>Invocation</td>
+<td>Sa durée de vie se compte en tours du lanceur : une invocation de 3 tours disparaît pendant le troisième <code>AdvanceTurn()</code> du lanceur. Son déplacement et son contact (<em>Au contact</em>) restent au tick du monde.</td>
+</tr>
+<tr>
+<td>Chain</td>
+<td>Rebondit seulement entre entités sélectionnées, à portée du rebond.</td>
+</tr>
+<tr>
+<td>Ciblage</td>
+<td>Ne vise pas : il fige la sélection du moment pour les modules qui suivent.</td>
+</tr>
+<tr>
+<td>Délai, Répéter, Timer</td>
+<td>Leur délai, leur intervalle et leur durée se comptent en tours du lanceur.</td>
+</tr>
+<tr>
+<td>Incantation</td>
+<td>Se compte en tours du lanceur (<em>Paramètres du sort</em>, « Incantation (tours) ») : une incantation de 2 tours lance le sort pendant le deuxième <code>AdvanceTurn()</code> du lanceur, sur la sélection de ce moment ; 0 : le sort se résout dans l'appel. La sortie <em>Pendant l'incantation</em> tourne entre-temps (ses Délais avancent aux mêmes tours), une interruption annule le sort et rend son coût. Une incantation chargée sans touche part à son minimum en tours. <code>CastInTurns</code> est vrai et <code>CastRemaining</code> est en tours, pour une barre d'incantation.</td>
+</tr>
+<tr>
+<td>Statuts</td>
+<td>Durée et période (comportement <em>Périodique</em>) en tours du porteur : une brûlure de 2 tours à période 1 fait un tick à chacun des deux tours de la cible, puis expire.</td>
+</tr>
+</tbody>
+</table>
+<p>Le sort reste <strong>actif</strong> tant qu'une zone, un rayon canalisé ou un délai n'est pas fini : il se termine pendant le <code>AdvanceTurn()</code> qui atteint la fin de sa durée. Le monde n'a pas besoin de tourner entre deux tours ; s'il tourne (pour le visuel), il ne fait pas avancer ces durées.</p>
+<p>Un mur (<em>Bloquant</em>) reste immobile en tour par tour ; sa durée de vie se compte en tours.</p>
+<p><strong>Relecture visuelle.</strong> Le combat est résolu dans l'appel, mais sa présentation est rejouée dans le temps : le visuel d'un projectile vole de son point d'apparition jusqu'à sa cible à la <strong>vitesse de son Mouvement</strong>, et l'impact (effet, son, et tout ce que lancent ses nodes <em>Au contact</em> : dégâts affichés, statuts) est présenté à son arrivée. Avec plusieurs cibles (perçage), chacune est présentée à son heure d'arrivée et le visuel vole jusqu'à la plus lointaine. Un projectile sans mouvement présente tout au lancement. Un impact réglé « à l'arrêt » est joué sur le contact qui termine le projectile (son <em>Au contact</em> atteint son nombre de cibles), sinon sur la cible la plus lointaine. La durée totale est connue dès le retour du lancement : le dernier impact relu, plus la durée propre des effets qu'il lance (effet ponctuel, son, secousse, animation, lue dans la bibliothèque de présentation) :</p>
+<div class="highlight"><pre><span></span><code><span class="n">SkillExecution</span><span class="w"> </span><span class="n">execution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">…</span><span class="p">;</span><span class="w">                 </span><span class="c1">// exécution lancée (déjà terminée côté jeu)</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">attente</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">execution</span><span class="p">.</span><span class="n">PresentationDuration</span><span class="p">;</span><span class="w"> </span><span class="c1">// secondes jusqu'à la fin du dernier effet</span>
+</code></pre></div>
+<p>Sans présentation (<strong>Presentation Enabled</strong> décoché, voir <a href="../../configuration/simulation/">Simulation</a>), aucun visuel de module n'est créé et la durée vaut 0.</p>
+<p><strong>Zones et rayons.</strong> Leur visuel est affiché au lancement et reste en place tant qu'ils durent (une zone qui suit son lanceur ou sa cible se déplace avec lui à chaque tour). Après sa dernière activation, il reste visible la <strong>Turn Display Duration</strong> de son Module Visual (1 seconde par défaut), puis sa fin est présentée (effet et son d'expiration, visuel retiré). Une zone ou un rayon instantanés, résolus dans l'appel du lancement, sont ainsi visibles cette durée, comptée dans <code>PresentationDuration</code>.</p>
+<p><strong>Attendre avant le tour suivant.</strong> Votre gestionnaire de tours n'a pas à calculer cette attente : l'exécution dit quand le tour suivant peut commencer, selon le réglage <strong>Turn wait</strong> (configuration, <em>Paramètres généraux</em> ; un sort peut le remplacer dans ses <em>Paramètres du sort</em>) :</p>
+<table>
+<thead>
+<tr>
+<th>Turn wait</th>
+<th><code>IsTurnReady</code> devient vrai</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Presentation</strong> (par défaut)</td>
+<td>Une fois la logique du lancement résolue et sa présentation jouée (<code>PresentationRemaining</code> à 0).</td>
+</tr>
+<tr>
+<td><strong>Execution</strong></td>
+<td>Une fois la logique du lancement résolue, sans attendre les effets.</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>Tout de suite.</td>
+</tr>
+</tbody>
+</table>
+<p>La logique est résolue (<code>IsTurnLogicResolved</code>) quand l'exécution est terminée, ou qu'elle n'attend plus que des tours : une incantation, une zone, un rayon canalisé, un Délai compté en tours ne retiennent pas le tour ; une visée, une ruée ou un module encore compté en secondes (Attaque) le retiennent.</p>
+<div class="highlight"><pre><span></span><code><span class="n">caster</span><span class="p">.</span><span class="n">CastSlot</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="n">SkillExecution</span><span class="w"> </span><span class="n">execution</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">…</span><span class="p">;</span>
+<span class="n">execution</span><span class="p">.</span><span class="n">TurnReady</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">e</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">gestionnaireDeTours</span><span class="p">.</span><span class="n">TourSuivant</span><span class="p">();</span><span class="w"> </span><span class="c1">// levé une fois, après la frame qui rend le tour prêt</span>
+</code></pre></div>
+<p><code>TurnReady</code> est levé par la frame de présentation du manager (présentation désactivée comprise), dès la première frame après le lancement pour un sort prêt tout de suite. Après <code>AdvanceTurn()</code>, ce que le tour lance (sorties d'un Délai échu) est attendu de la même façon et <code>TurnReady</code> est levé de nouveau. Vous pouvez aussi interroger <code>IsTurnReady</code>.</p>
+<h2 id="faire-mourir-une-entite">Faire mourir une entité<a class="headerlink" href="#faire-mourir-une-entite" title="Permanent link">&para;</a></h2>
+<p>Une stat réglée pour « tuer à zéro » (les PV) fait mourir l'entité. Le jeu peut aussi la tuer lui-même avec <code>TriggerEntityDeath()</code>. Par défaut, un <code>SkillCaster</code> mort annule ses sorts et se désactive ; redéfinissez <code>OnEntityDeath()</code> pour changer ce comportement (animation de mort, ragdoll…).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
