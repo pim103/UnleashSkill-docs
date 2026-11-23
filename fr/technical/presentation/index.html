@@ -1,0 +1,3079 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Créer des sorts par graphe de nodes dans Unity">
+      
+      
+      
+        <link rel="canonical" href="https://pim103.github.io/UnleashSkill-docs/fr/technical/presentation/">
+      
+      
+        <link rel="prev" href="../diagnostics/">
+      
+      
+        <link rel="next" href="../gameplay/">
+      
+      
+        
+          <link rel="alternate" href="../../../technical/presentation/" hreflang="en">
+        
+          <link rel="alternate" href="./" hreflang="fr">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Présentation - UnleashSkill</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#presentation" class="md-skip">
+          Aller au contenu
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../" title="UnleashSkill" class="md-header__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UnleashSkill
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Présentation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../../technical/presentation/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Rechercher" placeholder="Rechercher" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Recherche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Effacer" aria-label="Effacer" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initialisation de la recherche
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Onglets" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Accueil
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Démarrage
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../concepts/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Concepts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../configuration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Configuration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../skills/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Sorts
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../reference/nodes/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Référence des nodes
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../recipes/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Recettes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../troubleshooting/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Dépannage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Technique
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../" title="UnleashSkill" class="md-nav__button md-logo" aria-label="UnleashSkill" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    UnleashSkill
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Démarrage
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Démarrage
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/scene-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mettre en place une scène
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/first-skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Premier sort (Fireball)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/cast-from-code/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lancer un sort par code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../concepts/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Concepts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Graphe, nodes et ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/execution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exécution d'un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/branches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cibles et branches
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/targeting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visée, ancres et directions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monde de simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/dynamic-values/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Valeurs dynamiques
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concepts/presentation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../configuration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configuration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/entities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entités (stats, teams, types, templates)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/damage-reactions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dégâts et réactions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/statuses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Événements, marques et tags de sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../configuration/simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simulation et paramètres généraux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../skills/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sorts
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sorts
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Paramètres d'un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/slots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Emplacements, passifs et combos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tester un sort
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../skills/balance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Équilibrer les sorts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../reference/nodes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Référence des nodes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recipes/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recettes
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Recettes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recipes/fireball/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fireball
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dépannage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Technique
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Technique
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Points d'extension
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cast-cycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cycle d'un cast
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../writing-a-node/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Écrire un node
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../simulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Monde de simulation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagnostics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Diagnostiquer et mesurer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Présentation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emettre-une-commande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Émettre une commande
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Émettre une commande">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recette-un-effet-qui-voyage-dun-point-a-un-autre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recette : un effet qui voyage d'un point à un autre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliotheque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliothèque
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systeme-et-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Système et backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sockets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traînées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pistes-visuelles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pistes visuelles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pistes visuelles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pistes-dun-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pistes d'un sort
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retour-dimpact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retour d'impact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secousses-de-camera-avec-cinemachine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secousses de caméra avec Cinemachine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effets-caches-visibilite-par-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effets cachés (visibilité par équipe)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tout-arreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tout arrêter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-a-delai-et-relecture-tour-par-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commandes à délai et relecture (tour par tour)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deplacer-une-entite-relecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déplacer une entité (relecture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation-et-gameplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animation et gameplay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animation et gameplay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extraire-depuis-le-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extraire depuis le code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marquer-les-phases-dans-le-clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marquer les phases dans le clip
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajouter-un-type-de-commande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un type de commande
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gameplay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Statuts, événements, dégâts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../static-state/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    État statique et aperçu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Données
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Principe
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#emettre-une-commande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Émettre une commande
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Émettre une commande">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recette-un-effet-qui-voyage-dun-point-a-un-autre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Recette : un effet qui voyage d'un point à un autre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bibliotheque" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bibliothèque
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systeme-et-backends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Système et backends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sockets
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trainees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Traînées
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pistes-visuelles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pistes visuelles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pistes visuelles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pistes-dun-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pistes d'un sort
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retour-dimpact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retour d'impact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#secousses-de-camera-avec-cinemachine" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Secousses de caméra avec Cinemachine
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effets-caches-visibilite-par-equipe" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Effets cachés (visibilité par équipe)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tout-arreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tout arrêter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-a-delai-et-relecture-tour-par-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commandes à délai et relecture (tour par tour)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deplacer-une-entite-relecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Déplacer une entité (relecture)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation-et-gameplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Animation et gameplay
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Animation et gameplay">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extraire-depuis-le-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extraire depuis le code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marquer-les-phases-dans-le-clip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Marquer les phases dans le clip
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ajouter-un-type-de-commande" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ajouter un type de commande
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">&para;</a></h1>
+<p>Version utilisateur : <a href="../../concepts/presentation/">Présentation</a>.</p>
+<p>Code : <code>Assets/UnleashSkill/Runtime/Presentation/</code> (assembly <code>UnleashSkill</code>).</p>
+<h2 id="principe">Principe<a class="headerlink" href="#principe" title="Permanent link">&para;</a></h2>
+<p>Les nodes émettent des <strong>intentions</strong> ; des <strong>définitions</strong> réutilisables (assets) décrivent le contenu ; un <strong>système</strong> les matérialise après la simulation.</p>
+<div class="highlight"><pre><span></span><code>nodes / modules ──► PresentationCommandBuffer ──(LateUpdate)──► PresentationSystem ──► backends
+                    (UnleashSkillManager.PresentationCommands)       IEffectPlayer, ISoundPlayer, ICameraShaker,
+                                                                     IEntityAnimator, IIndicatorPlayer
+</code></pre></div>
+<p>Deux règles : la présentation <strong>ne modifie jamais</strong> la simulation, et le gameplay <strong>ne tient jamais</strong> d'objet Unity de présentation (seulement des UUID et des handles). Désactivée (serveur, tests, aperçu sans visuel), la file ignore les commandes et rend <code>PresentationHandle.None</code> : le combat ne change pas.</p>
+<h2 id="emettre-une-commande">Émettre une commande<a class="headerlink" href="#emettre-une-commande" title="Permanent link">&para;</a></h2>
+<p><code>UnleashSkillManager.PresentationCommands</code> (<code>PresentationCommandBuffer</code>) :</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Commande</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SpawnEffect(uuid, anchor, position, …)</code> / <code>StopEffect(handle)</code></td>
+<td>Effet (<code>EffectDefinition</code>)</td>
+</tr>
+<tr>
+<td><code>PlaySound(uuid, anchor, position, …)</code> / <code>StopSound(handle)</code></td>
+<td>Son (<code>SoundDefinition</code>)</td>
+</tr>
+<tr>
+<td><code>CameraShake(uuid, position, intensity)</code></td>
+<td>Tremblement (<code>CameraShakeDefinition</code>)</td>
+</tr>
+<tr>
+<td><code>PlayAnimation(uuid, entityId, speed)</code> / <code>StopAnimation</code> / <code>SetAnimationSpeed</code></td>
+<td>Animation (<code>AnimationDefinition</code>)</td>
+</tr>
+<tr>
+<td><code>ShowIndicator(shape, anchor, …)</code> / <code>UpdateIndicator</code> / <code>HideIndicator</code></td>
+<td>Indicateur au sol (<code>IndicatorShape</code>)</td>
+</tr>
+<tr>
+<td><code>MoveEntity(entityId, from, to, duration, delay)</code></td>
+<td>Déplacement du visuel d'une entité, présentation seule (<a href="#deplacer-une-entite-relecture">Déplacer une entité</a>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Drapeaux et variations</strong> : <code>PresentationCommand.Flags</code> (<code>PresentationCommandFlags</code>, un octet, <code>None</code> par défaut) porte des options lues par la présentation seule. <code>RandomSpin</code> sur un <code>SpawnEffect</code> (dernier paramètre de <code>SpawnEffect</code>, ou champ d'une commande à vous) tourne l'effet d'un angle aléatoire autour de son axe avant (+Z local), après la rotation de la commande. La <code>ScaleVariance</code> de l'<code>EffectDefinition</code> (± pour cent, au plus <code>EffectDefinition.MaxScaleVariance</code>) multiplie l'échelle de la commande par un facteur aléatoire, pour chaque apparition de cet effet. Les deux sont tirés par le <code>PresentationSystem</code> avec <code>UnityEngine.Random</code> quand il joue la commande, jamais par l'aléatoire de la simulation (<code>SkillExecution.Random</code>) : le combat reste identique, et une commande répliquée garde ses drapeaux pendant que chaque spectateur tire ses propres valeurs. La pose variée est celle de l'instance pendant toute sa vie (un effet attaché garde sa rotation). Un <em>Jouer effet</em> avec <strong>Orient</strong> calcule lui-même sa rotation, d'après sa <strong>Direction</strong> (<code>SkillDirection.Resolve</code> à chaque point d'émission dans le monde, haut selon la normale du plan de jeu), avant d'émettre.</p>
+<p>Les indicateurs sont des <strong>formes continues</strong> (<code>IndicatorShapeKind</code> : cercle, anneau, cône, rectangle, ligne, tracé ; le node <em>Afficher indicateur</em> propose les formes d'une Zone d'effet, <code>AreaShape</code>), pensées pour le temps réel : une forme, une teinte. Ce sont des commandes de présentation : présentation désactivée, rien ne s'affiche. Dans un jeu sur une grille, la portée et la zone en cases sont à l'interface de votre jeu, pas à <code>ShowIndicator</code>.</p>
+<p><code>IndicatorShape.Fill</code> (0 à 1) est la <strong>partie remplie</strong> d'une forme : une attaque annoncée se remplit jusqu'au coup. <code>FilledPart()</code> donne sa forme, agrandie depuis le centre (rayon × remplissage pour un cercle ou un cône, longueur × remplissage pour une ligne, longueur et largeur × remplissage pour un rectangle, un cercle entre les deux rayons pour un anneau) ; <code>LineIndicatorPlayer</code> trace son contour en seconde ligne (<code>BuildFillOutline</code> pour votre propre backend), pas par-dessus un effet de la bibliothèque. Le node <strong>Afficher indicateur</strong> fait monter <code>Fill</code> par <code>UpdateIndicator</code> jusqu'à la fin de sa durée.</p>
+<p>Un <strong>tracé</strong> (<code>IndicatorShapeKind.Path</code>, <code>IndicatorShape.ForPath(path, color, plane)</code>) est une polyligne : les points d'un <code>IndicatorPath</code>, dans le repère local de la commande, dessinés pleins jusqu'à <code>DashedFrom</code>, puis en pointillé. C'est la trajectoire prévue du node Visée. Le tracé est une référence lue quand la présentation exécute la commande : gardez vos propres instances et n'en modifiez pas une avant la frame de présentation suivante (la Visée en alterne deux). Le backend par défaut (<code>LineIndicatorPlayer</code>) dessine le pointillé avec une texture de tirets répétée ; <code>LineIndicatorPlayer.BuildPath</code> et <code>BuildDashes</code> donnent les mêmes lignes à votre propre backend.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Trajectoire prévue d'une définition, coupée au premier obstacle, affichée en tracé</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">points</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">TrajectoryPreviewPoint</span><span class="o">&gt;</span><span class="p">();</span>
+<span class="n">TrajectoryPreview</span><span class="p">.</span><span class="n">Sample</span><span class="p">(</span><span class="n">definition</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">forward</span><span class="p">,</span><span class="w"> </span><span class="n">aimPoint</span><span class="p">,</span>
+<span class="w">    </span><span class="k">new</span><span class="w"> </span><span class="n">TrajectoryPreviewSettings</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">Caster</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">caster</span><span class="p">,</span><span class="w"> </span><span class="n">Plane</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">plane</span><span class="p">,</span><span class="w"> </span><span class="n">Step</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">world</span><span class="p">.</span><span class="n">TickDuration</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="n">points</span><span class="p">);</span>
+<span class="n">cut</span><span class="p">.</span><span class="n">Submit</span><span class="p">(</span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="n">bodyShape</span><span class="p">,</span><span class="w"> </span><span class="n">rotation</span><span class="p">,</span><span class="w"> </span><span class="n">filter</span><span class="p">);</span><span class="w">   </span><span class="c1">// TrajectoryObstacleCut, gardé d'un tick à l'autre</span>
+<span class="n">cut</span><span class="p">.</span><span class="n">Apply</span><span class="p">(</span><span class="n">points</span><span class="p">);</span><span class="w">                                         </span><span class="c1">// dernier balayage répondu : un tick de retard</span>
+<span class="n">TrajectoryPreview</span><span class="p">.</span><span class="n">ToIndicatorPath</span><span class="p">(</span><span class="n">points</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">path</span><span class="p">);</span>
+<span class="n">commands</span><span class="p">.</span><span class="n">UpdateIndicator</span><span class="p">(</span><span class="n">handle</span><span class="p">,</span><span class="w"> </span><span class="n">IndicatorShape</span><span class="p">.</span><span class="n">ForPath</span><span class="p">(</span><span class="n">path</span><span class="p">,</span><span class="w"> </span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">plane</span><span class="p">),</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+</code></pre></div>
+<p><code>TrajectoryPreview.Sample</code> est pure (ni monde, ni tick, jamais un tirage de l'exécution) : elle joue la définition avec le <code>TrajectoryRunner</code> du jeu, si bien que sans obstacle les positions prévues sont les positions simulées. Un point est <code>Uncertain</code> à partir de la première Poursuite, du premier Retour ou de la première Ligne qui erre. <code>TrajectoryObstacleCut</code> balaie le monde le long de la polyligne (<code>ModuleQuery.Sweep</code>, au plus <code>MaxSweeps</code> cordes droites), jamais une requête physique ; un nouveau lot part quand le précédent a répondu. Le rejeu du tour par tour peut échantillonner une trajectoire de la même façon pour animer un visuel.</p>
+<p>Ancrage (<code>PresentationAnchor</code>) : <code>InWorld</code>, <code>OnEntity(entityId, os)</code>, <code>OnEntity(entityId, os, socket)</code> (un <a href="#sockets">socket</a>, qui l'emporte sur l'os ; <code>WithPositionOnly()</code> : seule la position est suivie, le décalage le long des axes du monde et la rotation en espace monde, comme pour un indicateur au sol), <code>OnBody(bodyId)</code> (position interpolée du corps). Un <code>UpdateIndicator</code> d'un indicateur ancré donne son nouveau décalage dans le repère de l'ancre. Pour choisir les points d'un node (impact, cibles reçues, lanceur, corps du module), <code>PresentationPoints.Collect</code> fait le travail commun aux nodes Jouer effet / Jouer son.</p>
+<p><code>Travel(from, to, duration)</code> déplace l'instance en ligne droite de <code>from</code> à <code>to</code> (espace monde), tournée vers l'arrivée. Il n'est pas réservé au rejeu du tour par tour : un node peut aussi l'émettre en temps réel, pour tout ce qui va d'un point à un autre sans corps dans le monde (un arc électrique entre deux cibles, une traînée vers le lanceur). La durée se compte en <strong>temps de présentation</strong> (somme des pas de <code>Process</code>, le temps de la frame ; ni le tick de la simulation ni les zones de temps du monde ne s'y appliquent), depuis le moment où l'instance est jouée, après son délai si elle en a un. À l'arrivée, l'ancrage disparaît et l'instance est arrêtée comme celle dont l'entité a disparu : un effet de particules cesse d'émettre, puis finit quand ses particules sont terminées ; un son en boucle s'arrête. Un effet ponctuel plus court que le trajet finit de lui-même avant.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Effet qui voyage de la cible précédente à la cible courante en 0,1 s (temps réel)</span>
+<span class="n">PresentationCommandBuffer</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">PresentationCommands</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">commands</span><span class="p">.</span><span class="n">Enabled</span><span class="p">)</span>
+<span class="w">    </span><span class="n">commands</span><span class="p">.</span><span class="n">SpawnEffect</span><span class="p">(</span><span class="n">trailUuid</span><span class="p">,</span><span class="w"> </span><span class="n">PresentationAnchor</span><span class="p">.</span><span class="n">Travel</span><span class="p">(</span><span class="k">from</span><span class="p">,</span><span class="w"> </span><span class="n">to</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">),</span><span class="w"> </span><span class="n">float3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span><span class="w"> </span><span class="n">quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span>
+<span class="w">        </span><span class="n">caster</span><span class="p">.</span><span class="n">EntityId</span><span class="p">);</span>
+</code></pre></div>
+<h3 id="recette-un-effet-qui-voyage-dun-point-a-un-autre">Recette : un effet qui voyage d'un point à un autre<a class="headerlink" href="#recette-un-effet-qui-voyage-dun-point-a-un-autre" title="Permanent link">&para;</a></h3>
+<p>Sans code, le node <strong>Jouer effet</strong> le fait : cocher <strong>Travel</strong>, choisir l'arrivée avec <strong>Emit At</strong> et le départ avec <strong>Travel From</strong> (une commande <code>Travel</code> par point d'émission, départ résolu une fois). Derrière un <strong>Enchaîner</strong>, <strong>Travel From</strong> = <em>Rebond précédent</em> dessine un trait de chaque cible à la suivante : la branche de chaque rebond porte son indice, l'entité et le point d'où il part (<code>SkillExecutionContext.ChainBounceIndexKey</code>, <code>ChainPreviousTargetKey</code>, <code>ChainPreviousPointKey</code>), lus par l'ancre <code>SkillAnchorSource.PreviousBounce</code> (<code>SkillAnchor.TryGetPreviousBounce</code>). Sans Enchaîner en amont, l'ancre retombe sur le lanceur et l'analyse du flux avertit (<code>W118</code>, <code>GraphFlowCodes.PreviousBounceNeverReceived</code>).</p>
+<p>Depuis un node à vous, lire les deux points dans la branche, puis émettre la commande :</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Dans OnStart d'un node derrière un Enchaîner : trait du rebond précédent à la cible reçue</span>
+<span class="n">PresentationCommandBuffer</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">PresentationCommands</span><span class="p">;</span>
+<span class="n">SkillTarget</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="n">GetPrimaryTarget</span><span class="p">();</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">commands</span><span class="p">.</span><span class="n">Enabled</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">target</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="k">null</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">SkillAnchor</span><span class="p">.</span><span class="n">TryGetPreviousBounce</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">Vector3</span><span class="w"> </span><span class="k">from</span><span class="p">))</span>
+<span class="w">    </span><span class="n">commands</span><span class="p">.</span><span class="n">SpawnEffect</span><span class="p">(</span><span class="n">trailUuid</span><span class="p">,</span><span class="w"> </span><span class="n">PresentationAnchor</span><span class="p">.</span><span class="n">Travel</span><span class="p">(</span><span class="k">from</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1f</span><span class="p">),</span>
+<span class="w">        </span><span class="n">float3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span><span class="w"> </span><span class="n">quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">EntityId</span><span class="p">,</span><span class="w"> </span><span class="n">target</span><span class="p">.</span><span class="n">EntityId</span><span class="p">);</span>
+<span class="n">context</span><span class="p">.</span><span class="n">Execution</span><span class="p">.</span><span class="n">CompleteNodeInstance</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>L'effet</strong> : lui donner de quoi rester visible en chemin (un Trail Renderer, des particules simulées en espace monde) ; sa propre position n'est que la tête du trajet.</li>
+<li><strong>Durée</strong> : en temps de présentation, un hitstop ou une zone de temps ne le ralentit donc pas ; 0 place l'instance à l'arrivée et la termine aussitôt.</li>
+<li><strong>Gameplay</strong> : rien ne lit le trajet, et présentation désactivée, aucune commande n'est émise. Un trait qui doit toucher quelque chose est un module avec un corps (un projectile), pas une présentation.</li>
+</ul>
+<p><strong>Un rayon dessiné jusqu'au mur</strong> est l'autre visuel à deux points : un module Rayon dont le visuel a <strong>Stretch To Length</strong> (<code>ModuleVisualDefinition.StretchToLength</code>) reçoit en Z de l'échelle de son prefab de corps la longueur effective de son dernier tir (<code>GameObjectRuntimeData.PresentedLength</code> : jusqu'au premier obstacle qui l'arrête, sinon sa portée), appliquée à chaque frame par le pooler en temps réel et par <code>SpawnModuleVisual</code> (<code>AxisScale</code>) en tour par tour. Modéliser le prefab long d'un mètre selon +Z depuis son pivot. Un visuel à vous peut lire <code>GameObjectRuntimeData.VisualScale</code>.</p>
+<p>Le handle sert à arrêter plus tard : <code>context.Execution.TrackPresentation(clé, handle)</code> le suit dans l'exécution, <code>StopPresentation(clé)</code> l'arrête (node Arrêter effet), un indicateur suivi avec <code>TrackPresentation(clé, handle, PresentationCommandType.HideIndicator)</code> compris (node Afficher indicateur), et <code>Cancel</code> / <code>Cleanup</code> arrêtent tout ce qui est suivi. Un effet ponctuel n'a pas besoin d'être suivi : il joue jusqu'au bout.</p>
+<p>Modèle : <code>PlaySoundModel.OnStart</code> (vérifie <code>commands.Enabled</code>, émet par point, suit le handle si le son boucle ou a une clé, puis <code>CompleteNodeInstance</code> quoi qu'il arrive).</p>
+<h2 id="bibliotheque">Bibliothèque<a class="headerlink" href="#bibliotheque" title="Permanent link">&para;</a></h2>
+<p><code>PresentationLibrary</code> (asset unique et global, <code>PresentationLibrary.Active</code>) : listes d'effets, sons, tremblements, visuels de module, animations, traînées. Chaque définition (<code>PresentationDefinition</code>) a un <strong>UUID stable</strong> ; les models stockent l'UUID (chaîne), jamais la référence Unity. Résolution : <code>TryGet&lt;T&gt;(uuid, out définition)</code>, <code>GetEffect</code>, <code>GetSound</code>… Édition : section Présentation du menu principal.</p>
+<p><strong>Depuis un graphe construit par code.</strong> Un graphe désigne une définition par son UUID. Deux façons de l'obtenir, à la construction :</p>
+<div class="highlight"><pre><span></span><code><span class="n">PresentationLibrary</span><span class="w"> </span><span class="n">library</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PresentationLibrary</span><span class="p">.</span><span class="n">Active</span><span class="p">;</span>
+
+<span class="c1">// Par le nom d'un asset de la bibliothèque : exact, le premier du type (un nom n'est pas unique). Null s'il n'y en a pas</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">visual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">library</span><span class="p">.</span><span class="n">FindByName</span><span class="o">&lt;</span><span class="n">ModuleVisualDefinition</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"Fireball"</span><span class="p">);</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">GameObjectModel</span><span class="p">().</span><span class="n">WithVisual</span><span class="p">(</span><span class="n">visual</span><span class="p">);</span>
+
+<span class="c1">// Avec un UUID choisi par le jeu, comme les identifiants des teams, stats et statuts</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">impact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PresentationDefinition</span><span class="p">.</span><span class="n">Create</span><span class="o">&lt;</span><span class="n">EffectDefinition</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"my-game.fireball.impact"</span><span class="p">,</span><span class="w"> </span><span class="s">"Fireball impact"</span><span class="p">);</span>
+<span class="n">library</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">impact</span><span class="p">);</span><span class="w">   </span><span class="c1">// false si l'UUID est pris</span>
+</code></pre></div>
+<p>Une définition est résolue dans la bibliothèque active au démarrage du module : celle créée par code doit y être à ce moment. <code>Create</code> fait une définition en mémoire : elle n'est pas enregistrée avec le projet, et le jeu la recrée à chaque lancement. <code>FindByName</code> parcourt les listes : à appeler en construisant le graphe, pas à chaque tick.</p>
+<p><code>ModuleVisualDefinition</code> décrit le visuel d'un module : prefab du corps (avec <code>SkillPrefab</code> : poolé, interpolé, sans logique) et effets / sons de lancement, de boucle, d'impact et d'expiration (<code>ModuleVisualPresenter</code>). Un module sans visuel reste valide. Qui porte le prefab du corps dépend du mode : en temps réel, le <code>SkillPrefab</code> du module, pris au <code>SkillPooler</code> (compteurs : <code>SkillPooler.Current.ActiveVisualCount</code>…) ; en tour par tour, pour un module rejoué par la présentation (résolu sur la sélection, zone ou rayon en tours), l'<code>IModuleVisualPlayer</code> (<code>ModuleVisualPlayer.ActiveCount</code>, qui reste à 0 en temps réel). Voir <a href="../diagnostics/#compteurs">Diagnostiquer et mesurer</a>.</p>
+<h2 id="systeme-et-backends">Système et backends<a class="headerlink" href="#systeme-et-backends" title="Permanent link">&para;</a></h2>
+<p><code>PresentationSystem</code> (<code>UnleashSkillManager.Presentation</code>) consomme la file dans <code>LateUpdate</code> (<code>Process(world, deltaTime)</code>), associe chaque handle à l'instance vivante, suit les ancrages et le temps des entités (hitstop : animation à vitesse 0).</p>
+<table>
+<thead>
+<tr>
+<th>Interface</th>
+<th>Défaut (<code>Backends/</code>)</th>
+<th>Remplacer pour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IEffectPlayer</code></td>
+<td><code>ParticleEffectPlayer</code> (pools par définition)</td>
+<td>VFX Graph (prévu)</td>
+</tr>
+<tr>
+<td><code>ISoundPlayer</code></td>
+<td><code>AudioSourceSoundPlayer</code> (pool d'<code>AudioSource</code>)</td>
+<td>FMOD, Wwise</td>
+</tr>
+<tr>
+<td><code>ICameraShaker</code></td>
+<td><code>SimpleCameraShaker</code> ; Cinemachine 3 si présent (<code>UnleashSkill.Cinemachine</code>, <code>DefaultPresentationBackends.CameraShakerFactory</code>)</td>
+<td>Caméra du jeu</td>
+</tr>
+<tr>
+<td><code>IEntityAnimator</code></td>
+<td><code>PlayablesEntityAnimator</code> (Playables sur l'<code>Animator</code>, mélangé à l'Animator Controller ; aussi <code>IAnimationClock</code>, le temps du clip lu par les <a href="#pistes-visuelles">pistes visuelles</a>)</td>
+<td>Système d'animation du jeu</td>
+</tr>
+<tr>
+<td><code>IIndicatorPlayer</code></td>
+<td><code>LineIndicatorPlayer</code> (contour <code>LineRenderer</code>)</td>
+<td>Décalques, shaders</td>
+</tr>
+<tr>
+<td><code>IModuleVisualPlayer</code></td>
+<td><code>ModuleVisualPlayer</code> (prefab du corps d'une <code>ModuleVisualDefinition</code>, pool par prefab, colliders désactivés)</td>
+<td>Visuel relu à part</td>
+</tr>
+<tr>
+<td><code>IEntityMover</code></td>
+<td><code>TransformEntityMover</code> (transform du visuel de l'entité, la racine reste immobile)</td>
+<td>La présentation des déplacements du jeu (chemin, saut)</td>
+</tr>
+<tr>
+<td><code>ISocketResolver</code></td>
+<td><code>DefaultSocketResolver</code> (composant <code>PresentationSockets</code>, os humanoïde, noms d'os ; voir <a href="#sockets">Sockets</a>)</td>
+<td>Le système d'équipement du jeu</td>
+</tr>
+<tr>
+<td><code>ITrailRenderer</code></td>
+<td><code>MeshTrailRenderer</code> (un mesh généré par traînée, en pool ; voir <a href="#trainees">Traînées</a>)</td>
+<td>Le système de traînées du jeu</td>
+</tr>
+<tr>
+<td><code>IEntityFlasher</code></td>
+<td><code>PropertyBlockFlasher</code> (<code>MaterialPropertyBlock</code>, couleur d'un <code>SpriteRenderer</code> ; voir <a href="#retour-dimpact">Retour d'impact</a>)</td>
+<td>Les matériaux ou shaders du jeu</td>
+</tr>
+</tbody>
+</table>
+<p><code>DefaultPresentationBackends.Install(system, library)</code> branche les défauts sur les emplacements <strong>vides</strong> ; un jeu affecte avant (ou remplace) une propriété du système (<code>Effects</code>, <code>Sounds</code>, <code>CameraShaker</code>, <code>Animator</code>, <code>Indicators</code>, <code>ModuleVisuals</code>, <code>Movers</code>, <code>Sockets</code>, <code>Trails</code>, <code>Flasher</code>). Les résolveurs <code>EntityResolver</code>, <code>EntityTimeScaleResolver</code>, <code>EntityCollector</code> relient les identifiants d'entité aux transforms.</p>
+<p><strong>Animations</strong> : une commande <code>PlayAnimation</code> porte <code>PresentationCommand.Playback</code> (<code>AnimationPlayback</code>) : <code>StartTime</code> (secondes de lecture à la vitesse de la définition, un tick d'animation divisé par la cadence : le <strong>Start</strong> d'une étape de combo, celui de <em>Jouer animation</em>, une attaque reprise après sa boucle d'attente), <code>OverridesFadeIn</code> / <code>FadeIn</code> (la <strong>Transition</strong> d'une étape de combo) et <code>Holds</code> / <code>HoldTime</code> (le <strong>Hold At</strong> de <em>Jouer animation</em> : figée là jusqu'à son arrêt). Un <code>IEntityAnimator</code> du jeu les lit ; celui par défaut fait aussi le fondu enchaîné : un nouveau clip sans masque recouvre ceux qui jouent, qui gardent leur poids jusqu'à ce qu'il soit plein, puis disparaissent (l'Animator Controller ne réapparaît jamais entre deux coups). Un clip avance dès la frame qui suit son lancement (aucun tick de retard), et le root motion reste coupé d'un clip à l'autre.</p>
+<h2 id="sockets">Sockets<a class="headerlink" href="#sockets" title="Permanent link">&para;</a></h2>
+<p>Un <strong>socket</strong> est un point nommé d'une entité (main, pointe de l'arme, bouche du canon) que suit la présentation. Les sockets forment une liste fermée réglée par le jeu dans la bibliothèque (<strong>Main Menu → Présentation → Sockets</strong>, <code>PresentationLibrary.Sockets</code>, <code>SocketDefinition</code>), référencés par un UUID stable : les renommer ne casse rien. Une bibliothèque neuve a huit sockets par défaut à UUID fixes (<code>SocketDefinition.HeadUuid</code> = <code>socket-head</code>, <code>ChestUuid</code>, <code>RightHandUuid</code>, <code>LeftHandUuid</code>, <code>FeetUuid</code>, <code>WeaponBaseUuid</code>, <code>WeaponTipUuid</code>, <code>MuzzleUuid</code>) ; Head, Chest, RightHand et LeftHand portent leur os humanoïde. <strong>Ajouter les sockets par défaut manquants</strong> (ou <code>library.AddDefaultSockets()</code>) remet ceux que vous avez supprimés.</p>
+<table>
+<thead>
+<tr>
+<th>Champ de <code>SocketDefinition</code></th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Socket Name</strong></td>
+<td>Nom affiché dans les menus <strong>Socket</strong> des nodes</td>
+</tr>
+<tr>
+<td><strong>Human Bone</strong></td>
+<td>Os d'un rig Humanoid, trouvé automatiquement (<code>Animator.GetBoneTransform</code>) ; <em>None</em> par défaut</td>
+</tr>
+<tr>
+<td><strong>Bone Names</strong></td>
+<td>Noms d'os de repli, cherchés dans l'ordre dans la hiérarchie (<code>hand_r</code>, <code>mixamorig:RightHand</code>…)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Déclarer où sont les sockets</strong> : le composant <code>PresentationSockets</code> (<strong>Add Component → UnleashSkill → Presentation Sockets</strong>), sur l'entité ou sur un objet de sa hiérarchie (prefab d'arme, bouclier) : une entrée par socket, un transform (vide : l'objet du composant), une position et une rotation locales. Une entrée posée <strong>hors de la racine</strong> (équipement) l'emporte sur celle de la racine (corps) : le <em>WeaponTip</em> de l'épée gagne sur celui du corps. Deux équipements qui déclarent le même socket : le premier dans la hiérarchie, avec un avertissement dans l'éditeur.</p>
+<p><strong>Résolution</strong> (<code>ISocketResolver</code>, <code>PresentationSystem.Sockets</code> ; par défaut <code>DefaultSocketResolver</code>), dans l'ordre :</p>
+<ol>
+<li>les composants <code>PresentationSockets</code> de l'entité ;</li>
+<li>le <strong>Human Bone</strong> du socket, si l'<code>Animator</code> de l'entité est Humanoid ;</li>
+<li>ses <strong>Bone Names</strong>, puis son nom, cherchés dans la hiérarchie (<code>BoneLocator</code>) ;</li>
+<li>sinon la racine, avec un avertissement unique par entité et socket, dans l'éditeur seulement.</li>
+</ol>
+<p>Le résultat est mis en cache par (entité, socket). Il est relu quand un composant <code>PresentationSockets</code> est activé, désactivé ou déplacé dans une hiérarchie (arme équipée, rangée, changée), quand le transform en cache est détruit ou quitte l'entité, et sur <code>Invalidate(entité)</code> (<code>Invalidate(null)</code> : tout) pour un système d'équipement qui ne passe pas par le composant. Les instances ancrées relisent leur socket à chaque frame : un effet sur la pointe d'une arme changée passe sur la nouvelle.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Équipement du jeu, sans le composant : signaler à la présentation que l'arme a changé</span>
+<span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">Presentation</span><span class="p">.</span><span class="n">Sockets</span><span class="o">?.</span><span class="n">Invalidate</span><span class="p">(</span><span class="n">character</span><span class="p">.</span><span class="n">transform</span><span class="p">);</span>
+
+<span class="c1">// Depuis le code : un effet qui suit la bouche du canon de l'entité</span>
+<span class="n">commands</span><span class="p">.</span><span class="n">SpawnEffect</span><span class="p">(</span><span class="n">flashUuid</span><span class="p">,</span><span class="w"> </span><span class="n">PresentationAnchor</span><span class="p">.</span><span class="n">OnEntity</span><span class="p">(</span><span class="n">entityId</span><span class="p">,</span><span class="w"> </span><span class="k">null</span><span class="p">,</span><span class="w"> </span><span class="n">SocketDefinition</span><span class="p">.</span><span class="n">MuzzleUuid</span><span class="p">),</span>
+<span class="w">    </span><span class="n">float3</span><span class="p">.</span><span class="n">zero</span><span class="p">,</span><span class="w"> </span><span class="n">quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">);</span>
+</code></pre></div>
+<p>Un résolveur à vous (<code>ISocketResolver</code> : <code>TryResolve(entité, socketUuid, out transform, out localPosition, out localRotation)</code>, <code>Invalidate(entité)</code>) remplace celui par défaut : il est appelé à chaque frame pour chaque instance qui suit un socket, mettez en cache ce qui coûte. Les sockets sont de la <strong>présentation seulement</strong> : le gameplay ne les lit jamais (la pose d'un socket dépend de l'animation jouée, et un serveur sans rendu n'en a pas). Ils marchent en 2D (un socket est un transform) ; seuls les os humanoïdes ne s'y appliquent pas.</p>
+<h2 id="trainees">Traînées<a class="headerlink" href="#trainees" title="Permanent link">&para;</a></h2>
+<p>Une <strong>traînée</strong> (<code>TrailDefinition</code>, liste <code>PresentationLibrary.Trails</code>, <strong>Main Menu → Présentation → Traînées</strong>) est la trace du geste d'une entité : coup d'épée, coup de poing, dash. Elle est jouée par le node <strong>Jouer traînée</strong>, ou depuis le code par les commandes <code>StartTrail</code> / <code>StopTrail</code> :</p>
+<div class="highlight"><pre><span></span><code><span class="n">PresentationHandle</span><span class="w"> </span><span class="n">trail</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">commands</span><span class="p">.</span><span class="n">StartTrail</span><span class="p">(</span><span class="n">swordTrailUuid</span><span class="p">,</span><span class="w"> </span><span class="n">entityId</span><span class="p">);</span>
+<span class="c1">// ...</span>
+<span class="n">commands</span><span class="p">.</span><span class="n">StopTrail</span><span class="p">(</span><span class="n">trail</span><span class="p">);</span><span class="w">   </span><span class="c1">// plus d'échantillon, elle disparaît en fondu (Fade Out)</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mode</strong></td>
+<td><em>Ribbon</em> : un ruban entre deux sockets (base et pointe de la lame) ; <em>Point</em> : un socket, avec une largeur (poing, pied)</td>
+</tr>
+<tr>
+<td><strong>Base Socket / Tip Socket</strong></td>
+<td><em>Ribbon</em> : les deux sockets (par défaut <em>WeaponBase</em>, <em>WeaponTip</em>)</td>
+</tr>
+<tr>
+<td><strong>Socket</strong></td>
+<td><em>Point</em> : le socket suivi ; vide : le socket de la commande (<strong>Socket</strong> du node), sinon la racine</td>
+</tr>
+<tr>
+<td><strong>Material</strong></td>
+<td>Par défaut : le matériau livré <code>UnleashSkill/Trail</code></td>
+</tr>
+<tr>
+<td><strong>Lifetime</strong></td>
+<td>Durée de vie d'un échantillon (longueur de la traînée en temps), 0,15 s par défaut</td>
+</tr>
+<tr>
+<td><strong>Fade Out</strong></td>
+<td>Disparition après l'arrêt, en secondes (0 : les échantillons expirent simplement)</td>
+</tr>
+<tr>
+<td><strong>Width / Width Curve</strong></td>
+<td>Mode <em>Point</em> ; en <em>Ribbon</em>, la largeur est la distance entre les sockets</td>
+</tr>
+<tr>
+<td><strong>Color Gradient</strong></td>
+<td>De la tête (à gauche) à la queue (à droite)</td>
+</tr>
+<tr>
+<td><strong>Min Distance</strong></td>
+<td>Un échantillon n'est ajouté qu'au-delà (pas de vibration quand le geste s'arrête)</td>
+</tr>
+<tr>
+<td><strong>Sorting Layer Name / Order</strong></td>
+<td>2D</td>
+</tr>
+</tbody>
+</table>
+<p>Les sockets sont dans la définition : la traînée d'une épée est la même partout, la commande ne porte que l'entité. Le <code>PresentationSystem</code> les résout en transforms (<code>ISocketResolver</code>) et les résout de nouveau après une invalidation (arme changée).</p>
+<p><strong>Backend</strong> <code>ITrailRenderer</code> (<code>PresentationSystem.Trails</code>, par défaut <code>MeshTrailRenderer</code>) : <code>Resolve(definitionUuid)</code>, <code>Play(command, definition, first, second)</code> (les points suivis, <code>TrailAttachment</code> : transform et décalage), <code>SetAttachments</code>, <code>Stop</code> (fondu), <code>IsPlaying</code>, <code>SetTimeScale(handle, scale)</code> ; implémentez aussi <code>IPresentationTickable</code> et <code>IPresentationStoppable</code>. Le défaut génère un mesh par traînée (en pool, <code>MeshRenderer</code> sans ombre), échantillonne une fois par frame dans <code>LateUpdate</code> (après l'évaluation de l'animation) et subdivise entre deux échantillons selon une courbe de Catmull-Rom, d'après l'angle parcouru (8 segments au plus) : un geste rapide ne dessine pas de cassure. Une traînée <em>Point</em> fait face à <code>MeshTrailRenderer.ViewPoint</code> (par défaut : la caméra principale). <code>MeshTrailRenderer.Parent</code> range les objets des traînées sous un transform à vous (une scène d'aperçu) au lieu d'une racine de pool.</p>
+<ul>
+<li><strong>Temps de l'entité</strong> : les échantillons vieillissent au temps de l'entité (<code>EntityTimeScaleResolver</code>) : pendant un hitstop, la traînée se fige au lieu de raccourcir.</li>
+<li><strong>Arrêt</strong> : <code>StopTrail</code>, la clé ou la durée du node, la fin de l'exécution, l'entité disparue (la traînée finit son fondu dans le monde), <code>StopAll</code> (immédiat).</li>
+<li><strong>Shader</strong> : <code>UnleashSkill/Trail</code> est sans éclairage, couleur de sommet × texture × teinte, mélange additif ou alpha (<strong>Blend Mode</strong> du matériau), une passe sans tag <code>LightMode</code> : rendue par le pipeline intégré et par l'URP. En HDRP, vérifiez que le matériau s'affiche ; sinon, donnez aux définitions un matériau à vous (<code>Sprites/Default</code>, ou un matériau unlit HDRP). Une définition sans matériau prend celui livré ; dans un build, le shader est inclus dès qu'une définition référence le matériau (c'est le cas d'une définition créée dans l'éditeur).</li>
+<li>Un <code>TrailRenderer</code> du jeu passe par <strong>Jouer effet</strong> (persistant, attaché à un socket) : il vieillit au temps global, le temps de l'entité ne s'y applique pas. C'est la raison d'être de <code>TrailDefinition</code>. La traînée d'un projectile est l'effet en boucle du visuel de son module.</li>
+</ul>
+<h2 id="pistes-visuelles">Pistes visuelles<a class="headerlink" href="#pistes-visuelles" title="Permanent link">&para;</a></h2>
+<p>Une <code>AnimationDefinition</code> porte une liste de pistes visuelles (<code>VisualTracks</code>, <code>VisualTrack</code>) : un effet, un son, une traînée ou une secousse de la bibliothèque, à un socket de l'entité animée, entre deux <code>TrackTime</code> (une <code>TrackTimeReference</code>, <em>Clip Start</em>, <em>Startup</em>, <em>Active</em>, <em>Recovery</em> ou <em>Clip End</em>, plus <code>OffsetTicks</code> ; <code>ToTick(phases, clipTicks)</code> donne le tick). Rien à émettre : le <code>PresentationSystem</code> les joue lui-même quand il exécute un <code>PlayAnimation</code>, donc tout émetteur du clip les joue (nodes, réactions, votre propre code).</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Le clip sans ses pistes (option Play Visual Tracks des nodes, décochée)</span>
+<span class="n">commands</span><span class="p">.</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="n">animationUuid</span><span class="p">,</span><span class="w"> </span><span class="n">entityId</span><span class="p">,</span><span class="w"> </span><span class="n">flags</span><span class="p">:</span><span class="w"> </span><span class="n">PresentationCommandFlags</span><span class="p">.</span><span class="n">SkipVisualTracks</span><span class="p">);</span>
+</code></pre></div>
+<ul>
+<li><strong>Horloge</strong> : le temps normalisé du clip, cumulé sur ses boucles. L'animateur le donne s'il implémente <code>IAnimationClock</code> (<code>TryGetNormalizedTime(handle, out time)</code>, implémentée par <code>PlayablesEntityAnimator</code>) : vitesse, ralenti, hitstop et changements du jeu s'appliquent. Sinon le système se replie sur le temps de présentation écoulé × vitesse de la commande (<code>SetAnimationSpeed</code> compris) × temps de l'entité, divisé par la <code>Duration</code> de la définition. Une piste démarre quand le temps atteint <code>tick / TickCount</code> (<code>AnimationDefinition.TickCountAt</code>, la durée extraite), et de nouveau à chaque tour d'un clip en boucle.</li>
+<li><strong>Arrêt</strong> : avec l'animation (<code>StopAnimation</code> : interruption, annulation, fin d'une esquive ; sa fin naturelle ; une nouvelle animation sur la même entité, qui l'enchaîne en fondu ; <code>StopAll</code>) : les visuels qui durent s'arrêtent, les pistes pas commencées sont annulées, les visuels ponctuels finissent leur vie. Sur un clip sans boucle, <em>Clip End</em> est le début de son fondu de sortie naturel (<code>AnimationDefinition.FadeOutStart</code>).</li>
+<li><strong>Instances</strong> : lancées directement sur les backends, avec des handles tirés de la séquence de la file, jamais émises (l'<code>Observer</code> de la file ne les voit pas : un <code>PlayAnimation</code> répliqué joue ses pistes sur chaque client). Le public est celui de la commande d'animation, ou le <strong>Visible To</strong> de la piste par rapport au camp du lanceur. Une piste sans socket suit le visuel de l'entité (<code>TransformEntityMover.VisualResolver</code>, le transform que déplace un <code>MoveEntity</code> en relecture tour par tour), pas sa racine.</li>
+<li><strong>Serveur</strong> : file désactivée ou sans animateur, rien n'est lu ni joué. La simulation ne lit jamais une piste.</li>
+</ul>
+<h3 id="pistes-dun-sort">Pistes d'un sort<a class="headerlink" href="#pistes-dun-sort" title="Permanent link">&para;</a></h3>
+<p>Un <code>SkillGraphModel</code> porte <code>VisualTracks</code> (<code>SkillVisualTrack</code> : une <code>VisualTrack</code> plus une <code>Clock</code>, <code>SkillTrackClock</code>, et un <code>NodeId</code>) et <code>MutedAnimationTracks</code> (identifiants des pistes d'animation qu'il ne joue pas). Un sort est désigné dans une commande par son <code>Uuid</code> (stable, donné à la création et par la montée de format ; <code>AssignNewUuid</code> pour une copie, fait par l'éditeur à l'import d'un asset dupliqué).</p>
+<ul>
+<li><strong>Cast</strong> : l'exécution émet <code>PlayVisualTracks</code> (<code>PresentationCommandBuffer.PlayVisualTracks(skillUuid, casterEntityId)</code>) au lancement du sort, s'il a une piste Cast, et la suit : <code>StopVisualTracks</code> à sa fin (finie ou annulée). L'horloge est le temps de présentation depuis l'exécution de la commande × le temps du lanceur (<code>EntityTimeScaleResolver</code>) ; <code>SkillVisualTrack.CastTick</code> lit un temps en ticks depuis le lancement, -1 pour <em>Clip End</em> (la fin de l'exécution). En tour par tour, la commande porte le délai ambiant comme toute commande relue, et l'arrêt attend la fin de la présentation relue (<code>SkillExecution.PresentationRemaining</code>).</li>
+<li><strong>Node</strong> : <em>Attaque</em>, <em>Jouer animation</em> et <em>Esquive</em> passent <code>VisualTrackSource.Of(this, context)</code> à <code>PlayAnimation</code> (<code>PresentationCommand.SkillUuid</code>, <code>NodeId</code>). Le système joue les pistes du sort dont <code>Follows(nodeId)</code> avec celles de l'animation, à la même horloge, et les arrête avec elle ; les pistes d'animation listées dans <code>MutedAnimationTracks</code> sont écartées. <code>SkipVisualTracks</code> n'écarte que les pistes de l'animation.</li>
+<li><strong>Résolution</strong> : <code>PresentationSystem.SkillTrackResolver</code> (<code>Func&lt;string, SkillGraphModel&gt;</code>) trouve le sort d'une commande ; par défaut <code>ResolveConfiguredSkill</code> : les sorts de la configuration active, puis ceux des exécutions en cours. Un serveur, un replay ou un outil le remplace pour trouver ses propres sorts.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="c1">// Votre propre appel d'animation, avec les pistes du sort calées sur ce node</span>
+<span class="n">commands</span><span class="p">.</span><span class="n">PlayAnimation</span><span class="p">(</span><span class="n">animationUuid</span><span class="p">,</span><span class="w"> </span><span class="n">entityId</span><span class="p">,</span><span class="w"> </span><span class="n">tracks</span><span class="p">:</span><span class="w"> </span><span class="n">VisualTrackSource</span><span class="p">.</span><span class="n">Of</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">context</span><span class="p">));</span>
+</code></pre></div>
+<h2 id="retour-dimpact">Retour d'impact<a class="headerlink" href="#retour-dimpact" title="Permanent link">&para;</a></h2>
+<p>Chaque touche de <strong>Dégâts simples</strong> et <strong>Dégâts avancés</strong> joue un <strong>profil de retour d'impact</strong> (<code>HitFeedbackDefinition</code>, liste <code>PresentationLibrary.HitFeedbacks</code>, <strong>Menu principal → Présentation → Retour d'impact</strong>) sans node dans le graphe. <code>SkillExecution.RaiseDamageDealt</code> choisit le profil et émet une commande <code>HitFeedback</code> par touche (par profil joué : une variante <em>Add</em> en ajoute une), file activée seulement ; le <code>PresentationSystem</code> la déplie.</p>
+<table>
+<thead>
+<tr>
+<th>Champ</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Effect Uuid / Effect Direction</strong></td>
+<td>Effet ponctuel au contact, son avant selon une direction de sort (défaut <em>Normale du contact</em>)</td>
+</tr>
+<tr>
+<td><strong>Sound Uuid</strong></td>
+<td>Son au contact</td>
+</tr>
+<tr>
+<td><strong>Socket Uuid</strong></td>
+<td>Point de la cible sans contact (dégâts hors d'un module) : <em>Chest</em> par défaut, position seule</td>
+</tr>
+<tr>
+<td><strong>Flash / Flash Color / Flash Duration / Flash Curve</strong></td>
+<td>Flash de la cible (défaut blanc, 0,08 s) ; la courbe est le poids de la couleur du flash sur la durée</td>
+</tr>
+<tr>
+<td><strong>Camera Shake Uuid / Local Player Only</strong></td>
+<td>Secousse au contact ; <em>Local Player Only</em> : seulement quand le lanceur ou la cible est local (<code>PresentationSystem.IsLocalEntity</code>, <code>Func&lt;int, bool&gt;</code>, null : toujours)</td>
+</tr>
+<tr>
+<td><strong>Scale By</strong></td>
+<td><em>None</em> ; <em>Damage</em> : montant / <strong>Damage Reference</strong> ; <em>Health Ratio</em> : montant retiré / maximum de la première stat touchée / <strong>Health Ratio Reference</strong> ; borné par <strong>Min Scale</strong> et <strong>Max Scale</strong>. Met à l'échelle l'effet et l'intensité de la secousse (<code>PresentationCommand.Value</code>)</td>
+</tr>
+<tr>
+<td><strong>Mark Variants</strong></td>
+<td>Marque de branche (<code>BranchMarkDefinition</code>, <em>Critique</em>…) → profil qui <strong>remplace</strong> le profil (première variante <em>Replace</em> dont le coup porte la marque) ou est joué <strong>en plus</strong> (<em>Add</em>)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Choix du profil</strong>, du plus précis au plus général (<code>HitFeedbackOverride</code> : <em>Inherit</em>, <em>Profile</em>, <em>None</em>) :</p>
+<ol>
+<li>le node de dégâts : <strong>Hit Feedback</strong> (<code>WithHitFeedback(mode, uuid)</code>), <em>None</em> pour un coup silencieux ;</li>
+<li>le visuel du module d'où viennent les dégâts, pour l'effet et le son : quand sa <code>ModuleVisualDefinition</code> joue un effet ou un son d'impact sur les cibles (<strong>Impact Contacts</strong> <em>All</em> ou <em>Targets</em>), la commande porte <code>PresentationCommandFlags.SkipImpactEffect</code> et le profil ne joue que son flash et sa secousse (pas de double impact) ;</li>
+<li>le sort : <code>SkillGraphModel.HitFeedback</code> / <code>HitFeedbackUuid</code> (réglages du sort), <em>None</em> pour un sort silencieux ;</li>
+<li>le premier tag du sort, dans son ordre, qui a un profil (<code>PresentationLibrary.SkillTagHitFeedbacks</code>, <code>SetSkillTagHitFeedback</code>) ;</li>
+<li>la <strong>surface</strong> de la cible ;</li>
+<li>le défaut de la bibliothèque (<code>DefaultHitFeedbackUuid</code>), sinon le profil intégré <code>HitFeedbackDefinition.BuiltInDefault</code> (<code>hit-feedback-default</code> : un flash blanc de 0,08 s, sans asset).</li>
+</ol>
+<p><strong>Surfaces</strong> (<code>SurfaceDefinition</code>, <code>PresentationLibrary.Surfaces</code>, <strong>Menu principal → Présentation → Surfaces</strong>) : liste fermée à UUID stables ; défauts <em>Flesh</em>, <em>Metal</em>, <em>Stone</em>, <em>Wood</em>, <em>Ethereal</em> (<code>SurfaceDefinition.FleshUuid</code>…, sans profil), remis par <code>AddDefaultSurfaces()</code>. La surface d'une entité est celle de son composant <strong>Presentation Surface</strong> (<code>PresentationSurface</code>), sinon celle de son type d'entité (<code>PresentationLibrary.EntityTypeSurfaces</code>, <code>SetEntityTypeSurface</code>) : le type le plus proche dans la hiérarchie l'emporte.</p>
+<p>Non joué : les ticks d'un statut périodique (le statut a son effet et son son d'application), les dégâts renvoyés, les soins. Une touche annulée par une interception (<code>SkillTarget.BeforeModuleHit</code>, une parade) n'inflige pas de dégâts : ni retour d'impact, ni impact du module ; l'effet d'une parade est joué par le code d'interception du jeu, qui connaît la touche (<code>ModuleHitData</code>). <strong>Automatic Hit Feedback</strong> (<code>PresentationLibrary.AutomaticHitFeedback</code>) coupe le tout. La simulation ne lit jamais le profil : un combat est identique avec ou sans, et présentation désactivée, rien n'est émis.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Depuis le code : un profil sur un node, le coup critique ajoute un effet plus gros</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">crit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PresentationDefinition</span><span class="p">.</span><span class="n">Create</span><span class="o">&lt;</span><span class="n">HitFeedbackDefinition</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"my-game.hit.crit"</span><span class="p">,</span><span class="w"> </span><span class="s">"Critical hit"</span><span class="p">);</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">hit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PresentationDefinition</span><span class="p">.</span><span class="n">Create</span><span class="o">&lt;</span><span class="n">HitFeedbackDefinition</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"my-game.hit.sword"</span><span class="p">,</span><span class="w"> </span><span class="s">"Sword hit"</span><span class="p">);</span>
+<span class="n">hit</span><span class="p">.</span><span class="n">MarkVariants</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">HitFeedbackMarkVariant</span><span class="p">(</span><span class="n">BranchMarkDefinition</span><span class="p">.</span><span class="n">CriticalUuid</span><span class="p">,</span><span class="w"> </span><span class="n">crit</span><span class="p">.</span><span class="n">Uuid</span><span class="p">,</span><span class="w"> </span><span class="n">HitFeedbackVariantMode</span><span class="p">.</span><span class="n">Add</span><span class="p">));</span>
+<span class="n">library</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">crit</span><span class="p">);</span>
+<span class="n">library</span><span class="p">.</span><span class="n">Add</span><span class="p">(</span><span class="n">hit</span><span class="p">);</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">damage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">DamageSimpleModel</span><span class="p">(</span><span class="n">healthUuid</span><span class="p">,</span><span class="w"> </span><span class="mf">20f</span><span class="p">).</span><span class="n">WithHitFeedback</span><span class="p">(</span><span class="n">HitFeedbackOverride</span><span class="p">.</span><span class="n">Profile</span><span class="p">,</span><span class="w"> </span><span class="n">hit</span><span class="p">.</span><span class="n">Uuid</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Backend du flash</strong> <code>IEntityFlasher</code> (<code>PresentationSystem.Flasher</code>) : <code>Flash(entité, couleur, durée, courbe)</code>, <code>IsFlashing(entité)</code>, <code>SetTimeScale(entité, échelle)</code> ; implémenter aussi <code>IPresentationTickable</code> et <code>IPresentationStoppable</code>. Le défaut <code>PropertyBlockFlasher</code> teinte les renderers de l'entité par un <code>MaterialPropertyBlock</code>, sans instancier de matériau : la propriété de la bibliothèque (<strong>Flash Color Property</strong>), sinon <code>_BaseColor</code> si le matériau l'a, sinon <code>_Color</code> ; la couleur d'un <code>SpriteRenderer</code> (son alpha gardé). Particules, traînées et <code>LineRenderer</code> sont laissés tels quels. Les valeurs d'origine sont lues avant le flash et rendues à la fin (un renderer sans bloc de propriétés à lui n'en reçoit pas) ; un second flash pendant le premier repart d'elles. Le système transmet le temps de l'entité à chaque frame : le flash tient pendant un hitstop.</p>
+<h2 id="secousses-de-camera-avec-cinemachine">Secousses de caméra avec Cinemachine<a class="headerlink" href="#secousses-de-camera-avec-cinemachine" title="Permanent link">&para;</a></h2>
+<p>Avec Cinemachine 3 dans le projet, l'assembly <code>UnleashSkill.Cinemachine</code> se compile (<code>versionDefines</code>, <code>UNLEASHSKILL_CINEMACHINE</code>) et s'enregistre avant le chargement de la première scène (<code>RuntimeInitializeLoadType.SubsystemRegistration</code>) : <code>DefaultPresentationBackends.CameraShakerFactory</code> crée alors un <code>CinemachineCameraShaker</code>, que <code>Install</code> place dans l'emplacement <code>CameraShaker</code> s'il est vide. Rien à appeler côté jeu.</p>
+<p>À chaque <code>Shake</code>, le shaker cherche un <code>CinemachineImpulseListener</code> actif dans les scènes chargées (<code>FindAnyObjectByType</code>) :</p>
+<ul>
+<li><strong>trouvé</strong> : il émet une impulsion par sa propre <code>CinemachineImpulseSource</code> (objet poolé <em>Camera Impulse</em>) : forme <code>Bump</code>, <code>ImpulseDuration</code> = <code>CameraShakeDefinition.Duration</code>, vitesse dans une direction au hasard de longueur <code>Amplitude</code> × intensité de la commande (0 = 1). Une <code>Range</code> supérieure à 0 donne une impulsion <code>Dissipating</code> avec <code>DissipationDistance</code> = <code>Range</code> ; 0, une impulsion <code>Uniform</code>. L'impulsion est sur le canal par défaut de la source : un listener dont le <strong>Channel Mask</strong> l'exclut ne réagit pas. <strong><code>Frequency</code> n'est pas utilisée</strong> ;</li>
+<li><strong>aucun</strong> : il se rabat sur un <code>SimpleCameraShaker</code> (décalage de <code>Camera.main</code>, fréquence utilisée) et émet <strong>un avertissement</strong> par shaker (au premier repli), pour que le listener manquant ne passe pas inaperçu.</li>
+</ul>
+<p>Le jeu pose le listener sur ses caméras : <strong>Add Extension → CinemachineImpulseListener</strong> sur chaque <code>CinemachineCamera</code> qui doit trembler. <code>StopAll</code> n'annule que les impulsions émises par ce shaker, jamais celles du jeu.</p>
+<p>Pour façonner soi-même la secousse (fréquence, profil de bruit, canal), remplacer le backend : <code>UnleashSkillManager.Presentation.CameraShaker = monShaker</code> (un <code>ICameraShaker</code>, au besoin <code>IPresentationStoppable</code> et <code>IDisposable</code>), ou affecter <code>DefaultPresentationBackends.CameraShakerFactory</code> après <code>SubsystemRegistration</code> et avant le premier accès à <code>UnleashSkillManager.Presentation</code>, qui crée le système avec ses backends (par exemple en <code>RuntimeInitializeLoadType.BeforeSceneLoad</code>).</p>
+<h2 id="effets-caches-visibilite-par-equipe">Effets cachés (visibilité par équipe)<a class="headerlink" href="#effets-caches-visibilite-par-equipe" title="Permanent link">&para;</a></h2>
+<p>Un piège, une unité invisible : un effet montré à une équipe et pas à l'autre. Les nodes <strong>Jouer effet</strong>, <strong>Jouer son</strong> et <strong>Tremblement caméra</strong> ont un champ <strong>Visible To</strong> (<code>PresentationVisibility</code>) : <em>Tout le monde</em> (défaut), <em>Équipe du lanceur</em> (seulement les spectateurs de l'équipe du lanceur), <em>Autres équipes</em>. Un visuel de module (<code>ModuleVisualDefinition.VisibleTo</code>, section <em>Visibility</em>) restreint de même toutes ses commandes : prefab du corps joué par la présentation (mode tour par tour), lancement, boucle, impact, expiration. La règle est rapportée à l'équipe du lanceur (<code>SkillTarget.TeamUuid</code>), lue quand le node s'exécute.</p>
+<p>La visibilité voyage avec la commande (<code>PresentationCommand.Audience</code>, un <code>PresentationAudience</code> : visibilité et UUID d'équipe), et le filtre s'applique quand elle est jouée :</p>
+<table>
+<thead>
+<tr>
+<th>Où</th>
+<th>Quoi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PresentationSystem.ViewerTeamUuid</code></td>
+<td>UUID d'équipe du joueur local. Une commande de lancement dont le public ne le comprend pas est ignorée (jamais jouée, jamais mise en attente). Null ou vide (défaut) : le spectateur voit tout (spectateur, relecture, solo). Un changement rafraîchit les effets persistants déjà lancés</td>
+</tr>
+<tr>
+<td><code>PresentationSystem.RefreshVisibility()</code></td>
+<td>Réapplique le spectateur et le filtre aux effets persistants et sons en boucle en cours : arrête ceux désormais cachés, lance ceux désormais visibles</td>
+</tr>
+<tr>
+<td><code>PresentationSystem.CommandFilter</code></td>
+<td>Filtre du jeu, après le public (<code>Func&lt;PresentationCommand, bool&gt;</code>, faux = ignorée) : effets et animations d'une unité invisible (<code>SourceEntityId</code>, <code>TargetEntityId</code>), brouillard de guerre</td>
+</tr>
+<tr>
+<td><code>PresentationCommand.IsVisibleTo(teamUuid)</code></td>
+<td>Même règle, pour ce qui réplique les commandes : un serveur n'envoie à chaque client que ce que voit son équipe</td>
+</tr>
+<tr>
+<td><code>PresentationCommandBuffer.Audience</code> / <code>AudienceScope(audience)</code> (<code>using</code>)</td>
+<td>Public ambiant de la file, donné à chaque commande émise dans la portée dont le public propre est tout le monde : ce qu'utilisent les nodes. Une commande à vous peut aussi poser <code>Audience</code> elle-même</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1">// Joueur local : les pièges des autres équipes ne s'affichent pas</span>
+<span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">Presentation</span><span class="p">.</span><span class="n">ViewerTeamUuid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">localPlayer</span><span class="p">.</span><span class="n">TeamUuid</span><span class="p">;</span>
+
+<span class="c1">// Un effet à vous, montré seulement à l'équipe du lanceur</span>
+<span class="n">PresentationCommandBuffer</span><span class="w"> </span><span class="n">commands</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">PresentationCommands</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="p">(</span><span class="n">commands</span><span class="p">.</span><span class="n">AudienceScope</span><span class="p">(</span><span class="n">PresentationAudience</span><span class="p">.</span><span class="n">For</span><span class="p">(</span><span class="n">PresentationVisibility</span><span class="p">.</span><span class="n">CasterTeam</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">TeamUuid</span><span class="p">)))</span>
+<span class="w">    </span><span class="n">commands</span><span class="p">.</span><span class="n">SpawnEffect</span><span class="p">(</span><span class="n">markUuid</span><span class="p">,</span><span class="w"> </span><span class="n">PresentationAnchor</span><span class="p">.</span><span class="n">InWorld</span><span class="p">,</span><span class="w"> </span><span class="n">point</span><span class="p">,</span><span class="w"> </span><span class="n">quaternion</span><span class="p">.</span><span class="n">identity</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">,</span><span class="w"> </span><span class="n">caster</span><span class="p">.</span><span class="n">EntityId</span><span class="p">);</span>
+</code></pre></div>
+<p>La simulation ne lit jamais le public : la file émet toutes les commandes (l'observateur les reçoit toutes, avec leur public), la durée de présentation d'une exécution compte aussi les commandes cachées (l'attente du tour par tour est la même pour toutes les équipes), et une commande cachée ne change rien au gameplay. Seules les commandes de lancement sont filtrées : un arrêt ou une mise à jour d'une instance cachée arrive au backend avec un handle qu'il ne connaît pas, sans effet (contrat de <code>IPresentationPlayer.Stop</code>). Le spectateur et le filtre sont lus quand la frame traite la commande. Les effets persistants (mode <em>Persistent</em> ou <em>Attached</em>) et les sons en boucle lancés et pas encore arrêtés sont retenus, vus ou cachés : changer <code>ViewerTeamUuid</code> arrête ceux que le nouveau spectateur ne voit pas et lance ceux qu'il voit désormais (même handle, à leur ancrage), et <code>RefreshVisibility()</code> fait de même après un changement de ce que cache <code>CommandFilter</code> (<code>PersistentCount</code> : combien sont retenus). Un effet ponctuel, une animation ou un indicateur déjà joué n'est pas rejoué. <code>UnleashSkillManager.ResetPresentation</code> crée un nouveau système : lui redonner son spectateur.</p>
+<p><strong>Un écran, deux équipes à tour de rôle</strong> (hot seat) : passer <code>ViewerTeamUuid</code> à l'équipe dont le tour commence ; les marques cachées de l'autre équipe disparaissent, celles de cette équipe reviennent.</p>
+<div class="highlight"><pre><span></span><code><span class="k">void</span><span class="w"> </span><span class="nf">OnTurnStarted</span><span class="p">(</span><span class="n">SkillTarget</span><span class="w"> </span><span class="n">unit</span><span class="p">)</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="n">UnleashSkillManager</span><span class="p">.</span><span class="n">Presentation</span><span class="p">.</span><span class="n">ViewerTeamUuid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">unit</span><span class="p">.</span><span class="n">TeamUuid</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Un effet caché qui doit durer plus que le sort</strong> (piège posé jusqu'à son déclenchement) : un effet persistant d'un node <strong>Jouer effet</strong> s'arrête avec l'exécution qui l'a joué. L'émettre depuis le jeu, sous <code>AudienceScope</code> (exemple plus haut), garder son handle et l'arrêter soi-même (<code>StopEffect</code>) au déclenchement ; les changements de spectateur s'y appliquent. Sur une unité, un statut le fait sans code : son <strong>Loop Effect</strong> dure autant que le statut (Technical → <em>Gameplay</em>). Limite : en mode temps réel, le prefab du corps d'un module est porté par son <code>SkillPrefab</code> (pooler), pas par une commande ; il reste visible de tous : donner à un module caché un effet de boucle plutôt qu'un prefab de corps, ou masquer son <code>SkillPrefab</code> depuis le jeu.</p>
+<h2 id="tout-arreter">Tout arrêter<a class="headerlink" href="#tout-arreter" title="Permanent link">&para;</a></h2>
+<p>Le système ne suit que les instances qui suivent un ancrage. Ce qu'un backend joue de lui-même (effet ou son ponctuel posé <code>InWorld</code>, visuel ou indicateur dans le monde, secousse de caméra) n'est connu que du backend. Un backend qui implémente <strong><code>IPresentationStoppable</code></strong> (<code>StopAll()</code> : tout arrêter aussitôt, le backend reste utilisable) est appelé pour l'arrêter aussi ; tous les backends par défaut l'implémentent, shaker Cinemachine compris (il n'annule que les impulsions qu'il a émises, pas celles du jeu). L'interface est facultative : un backend à vous qui ne l'a pas continue de marcher, seules ses instances ancrées sont arrêtées, par <code>Stop(handle)</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Appel</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PresentationSystem.StopAll()</code></td>
+<td>Arrête les instances suivies, les animations, tout ce que jouent les backends <code>IPresentationStoppable</code>, abandonne les commandes à délai et vide la file. Les backends et leurs pools restent</td>
+</tr>
+<tr>
+<td><code>PresentationSystem.Enabled = false</code> (<code>UnleashSkillManager.PresentationEnabled</code>)</td>
+<td><code>StopAll()</code>, puis la file ignore les commandes (<code>PresentationHandle.None</code>) jusqu'à la réactivation</td>
+</tr>
+<tr>
+<td><code>UnleashSkillManager.ResetPresentation(système)</code>, avec le système courant</td>
+<td><code>StopAll()</code> sur lui : le système reste en place</td>
+</tr>
+<tr>
+<td><code>UnleashSkillManager.ResetPresentation(autre)</code> ou <code>ResetPresentation()</code></td>
+<td><code>Shutdown()</code> du système courant : <code>StopAll()</code>, puis chaque backend <code>IDisposable</code> est libéré (pools détruits). <code>autre</code> le remplace ; sans argument, un nouveau système est créé au prochain accès, d'après la configuration active</td>
+</tr>
+</tbody>
+</table>
+<p>Aucun ne touche au visuel d'un module en temps réel, porté par le <code>SkillPooler</code> : il part avec son module.</p>
+<h2 id="commandes-a-delai-et-relecture-tour-par-tour">Commandes à délai et relecture (tour par tour)<a class="headerlink" href="#commandes-a-delai-et-relecture-tour-par-tour" title="Permanent link">&para;</a></h2>
+<p>Une commande peut porter un délai (<code>PresentationCommand.Delay</code>, secondes de présentation) : le système la garde (<code>ScheduledCount</code>, <code>ScheduledDuration</code>) et l'exécute à son heure, en temps de présentation (somme des pas de <code>Process</code>). Une commande qui vise une instance pas encore lancée (arrêt) attend au moins son lancement. Désactiver la présentation vide l'attente.</p>
+<p>Le délai n'est jamais écrit à la main par un node : c'est le <strong>délai ambiant</strong> de la file (<code>PresentationCommandBuffer.Delay</code>), posé le temps d'une portée par <code>SkillExecution.PresentationAt(délai)</code> (<code>using</code>), qui étend aussi <code>SkillExecution.PresentationDuration</code>. En tour par tour, chaque commande émise par les nodes d'une exécution (démarrage, tour, pas) repousse la fin de sa présentation de son délai plus sa durée propre, lue dans sa définition (effet ponctuel : émission plus durée de vie des particules ; son : clip le plus long ; secousse ; animation sans boucle) : <code>PresentationDuration</code>, et <code>PresentationRemaining</code> une fois lancée par la frame, qu'attend <code>IsTurnReady</code>. Un <code>StopAll</code> met fin à cette attente. <code>SkillExecution.Defer</code> garde le délai de son dépôt : une continuation (résultat de requête sur la sélection) est présentée avec ce qui l'a lancée. En temps réel, le délai reste 0.</p>
+<p>Le projectile résolu sur la sélection (<code>GameObjectModel.ResolveOnSelection</code>) l'utilise : chaque cible est distribuée dans une portée à son heure d'arrivée (distance / vitesse du corps à l'apparition), puis <code>ModuleVisualPresenter.OnReplayed</code> émet <code>SpawnModuleVisual</code>, l'effet et le son de boucle sur un ancrage <strong>trajet</strong> (<code>PresentationAnchor.Travel(départ, arrivée, durée)</code>, position interpolée depuis le lancement de l'instance, disparu à la fin du trajet). Le pooler n'instancie pas son visuel (<code>GameObjectModel.InstantiatesVisual</code>).</p>
+<p>Une zone ou un rayon en tour par tour (<code>GameObjectModel.PresentsVisualInTurns</code>, module porteur dont la logique avance en tours) ont aussi leur visuel joué par la présentation : <code>SpawnModuleVisual</code> dans le monde à la pose du corps (échelle par axe <code>PresentationCommand.AxisScale</code> : la boîte <strong>Scale</strong> du module multipliée par son échelle de forme, comme celle du pooler en temps réel ; pour une zone, cette boîte n'est pas sa forme : <strong>Radius</strong>, <strong>Width</strong>, <strong>Angle</strong> et la croissance ne s'appliquent pas au visuel), avec l'effet et le son de boucle, replacés quand le corps bouge à un tour. Leur fin (expiration, arrêt du visuel et de la boucle) est émise dans une portée retardée de <code>ModuleVisualDefinition.TurnDisplayDuration</code> après leur dernière activation : une zone instantanée reste visible, et <code>PresentationDuration</code> compte cet affichage. Une Attaque en tours a son visuel joué de la même façon, sans cet affichage en plus : sa fin est déjà relue à la fin de sa récupération.</p>
+<h2 id="deplacer-une-entite-relecture">Déplacer une entité (relecture)<a class="headerlink" href="#deplacer-une-entite-relecture" title="Permanent link">&para;</a></h2>
+<p><code>MoveEntity(entityId, from, to, duration, delay)</code> montre une entité qui va de <code>from</code> à <code>to</code> (repère du monde) en <code>duration</code> secondes de présentation, après avoir attendu <code>delay</code> secondes en <code>from</code> (plus le délai ambiant). C'est <strong>de la présentation seule</strong> : la commande ne touche ni le monde ni la position de l'entité dans celui-ci. La simulation (le node Dash, le jeu) place l'entité ; la présentation relit son déplacement, pour qu'une unité déplacée par un sort résolu au lancement ne saute pas à sa destination avant l'arrivée du projectile qui la pousse. Présentation désactivée : rien n'est émis.</p>
+<p>Son délai n'est pas un délai programmé : la commande est jouée par la frame qui la traite, et le visuel <strong>attend en <code>from</code></strong> pendant le délai, puis avance en ligne droite à vitesse constante. Sa durée compte comme sa durée propre (<code>PresentationDurations</code>) : émise par un node en tour par tour, elle repousse <code>PresentationDuration</code> comme toute commande. Depuis le jeu, après le lancement, <code>SkillExecution.PresentEntityMove(entity, from, to, duration, delay)</code> l'émet et étend la présentation de cette exécution jusqu'à l'arrivée (<code>IsTurnReady</code> l'attend) :</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// La simulation a déjà placé l'unité à sa destination : la montrer y aller après l'impact</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">caster</span><span class="p">.</span><span class="n">CastSlot</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span><span class="w"> </span><span class="k">out</span><span class="w"> </span><span class="n">SkillExecution</span><span class="w"> </span><span class="n">execution</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">SkillCastResult</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">impact</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">execution</span><span class="p">.</span><span class="n">PresentationDuration</span><span class="p">;</span>
+<span class="w">    </span><span class="n">execution</span><span class="p">.</span><span class="n">PresentEntityMove</span><span class="p">(</span><span class="n">unit</span><span class="p">,</span><span class="w"> </span><span class="n">previousPosition</span><span class="p">,</span><span class="w"> </span><span class="n">unit</span><span class="p">.</span><span class="n">transform</span><span class="p">.</span><span class="n">position</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">,</span><span class="w"> </span><span class="n">impact</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Le backend <code>IEntityMover</code> (<code>PresentationSystem.Movers</code>) la joue. Par défaut, <code>TransformEntityMover</code> déplace le <strong>transform du visuel</strong> de l'entité (<code>VisualResolver</code> ; par défaut le transform du premier <code>Animator</code> sous la racine), puis le rend à sa pose de repos sous l'entité à l'arrivée, ou à un <code>StopAll</code>. La racine, lue par le monde, ne bouge pas. Une entité sans un tel enfant est déplacée par sa racine, laissée à la destination à la fin : le monde lit cette pose le temps du déplacement. Mettre le modèle sous un enfant de l'entité (là où est d'habitude l'<code>Animator</code>) ou régler <code>VisualResolver</code> garde la racine immobile.</p>
+<p><code>PresentationDurations.OfDefinition(uuid, library)</code> (ou <code>Of(definition)</code>, <code>Of(command)</code>) lit depuis le code la durée propre d'une définition : effet ponctuel, son, secousse, animation à sa vitesse ; 0 pour ce qui joue jusqu'à l'arrêt. Pour caler un effet sur la fin d'un autre, ou le <code>delay</code> d'un déplacement, sans constante.</p>
+<h2 id="animation-et-gameplay">Animation et gameplay<a class="headerlink" href="#animation-et-gameplay" title="Permanent link">&para;</a></h2>
+<p>L'animation ne pilote jamais le gameplay. Les données dont le gameplay a besoin (phases en ticks, trajectoire d'os, root motion) sont <strong>extraites dans l'éditeur</strong> depuis le clip (<code>AnimationExtractedData</code>, inspecteur d'une <code>AnimationDefinition</code>) et lues par le module Attaque sans jouer le clip. Une extraction est <strong>périmée</strong> quand le clip, sa vitesse ou le tick de la configuration ont changé depuis : l'inspecteur le signale, les données sont à extraire de nouveau.</p>
+<h3 id="extraire-depuis-le-code">Extraire depuis le code<a class="headerlink" href="#extraire-depuis-le-code" title="Permanent link">&para;</a></h3>
+<p><code>AnimationExtraction</code> (éditeur, <code>UnleashSkill.Editor.Presentation</code>) fait ce que fait le bouton <strong>Extract</strong>, avec les réglages enregistrés dans chaque définition (personnage, os racine, os) et le tick de la configuration :</p>
+<table>
+<thead>
+<tr>
+<th>Méthode</th>
+<th>Extrait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Extract(definition)</code></td>
+<td>Une définition. Le <code>AnimationExtractionResult</code> donne <code>Success</code> (faux sans clip ou à vitesse nulle : rien n'a changé), <code>PhasesFromMarkers</code> et les <code>Messages</code> à afficher (aucun marqueur de phase, os introuvable, aucun personnage choisi)</td>
+</tr>
+<tr>
+<td><code>ExtractAll(library)</code> / <code>ExtractAll(definitions)</code></td>
+<td>Toutes les animations d'une <code>PresentationLibrary</code>, ou d'une liste</td>
+</tr>
+<tr>
+<td><code>ExtractStale(library)</code> / <code>ExtractStale(definitions)</code></td>
+<td>Les seules périmées (<code>IsStale(definition)</code>) ; une définition jamais extraite n'est pas périmée, <code>ExtractAll</code> l'extrait</td>
+</tr>
+<tr>
+<td><code>ConfiguredTickRate</code></td>
+<td>Tick utilisé par l'extraction</td>
+</tr>
+</tbody>
+</table>
+<p>Les définitions sont modifiées avec Undo et marquées modifiées, pas enregistrées : appeler <code>AssetDatabase.SaveAssets()</code> ensuite.</p>
+<div class="highlight"><pre><span></span><code><span class="c1">// Après un changement de tick, ou des clips téléchargés de nouveau</span>
+<span class="n">List</span><span class="o">&lt;</span><span class="n">AnimationExtractionResult</span><span class="o">&gt;</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AnimationExtraction</span><span class="p">.</span><span class="n">ExtractStale</span><span class="p">(</span><span class="n">PresentationLibrary</span><span class="p">.</span><span class="n">Active</span><span class="p">);</span>
+<span class="n">AssetDatabase</span><span class="p">.</span><span class="n">SaveAssets</span><span class="p">();</span>
+<span class="k">foreach</span><span class="w"> </span><span class="p">(</span><span class="n">AnimationExtractionResult</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">results</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">result</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+<span class="w">        </span><span class="n">Debug</span><span class="p">.</span><span class="n">LogWarning</span><span class="p">(</span><span class="s">$"{result.Definition.name}: {string.Join("</span><span class="w"> </span><span class="s">", result.Messages)}"</span><span class="p">);</span>
+</code></pre></div>
+<p>Le menu <strong>UnleashSkill &gt; Animations &gt; Re-extract stale animations</strong> le fait pour la bibliothèque active et enregistre. En ligne de commande (intégration continue), <code>ExtractStaleFromCommandLine</code> fait de même, écrit les messages en avertissements et lève une exception si une extraction échoue, ce qui fait quitter Unity avec le code 1 :</p>
+<div class="highlight"><pre><span></span><code>Unity -batchmode -quit -projectPath &lt;projet&gt; -executeMethod UnleashSkill.Editor.Presentation.AnimationExtraction.ExtractStaleFromCommandLine
+</code></pre></div>
+<h3 id="marquer-les-phases-dans-le-clip">Marquer les phases dans le clip<a class="headerlink" href="#marquer-les-phases-dans-le-clip" title="Permanent link">&para;</a></h3>
+<p>Avec <strong>Source</strong> sur <em>Markers</em> (<code>AnimationPhaseSource.Markers</code>), chaque extraction relit les phases dans les marqueurs nommés <code>UnleashPhase</code> du clip ; <em>Manual</em> garde les phases réglées sur la frise (converties si la fréquence de tick de la configuration change). La préparation commence au tick 0 ; les marqueurs donnent le début de l'impact et le début de la récupération.</p>
+<table>
+<thead>
+<tr>
+<th>Marqueur</th>
+<th>Lu par</th>
+<th>Convention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Courbe</td>
+<td><code>AnimationUtility.GetEditorCurve(clip, EditorCurveBinding.FloatCurve("", typeof(Animator), "UnleashPhase"))</code></td>
+<td>0 préparation, 1 impact, 2 récupération</td>
+</tr>
+<tr>
+<td>Événements</td>
+<td><code>AnimationUtility.GetAnimationEvents(clip)</code>, <code>functionName</code> = <code>UnleashPhase</code></td>
+<td><code>stringParameter</code> <code>Active</code> (ou <code>Impact</code>) / <code>Recovery</code>, casse ignorée ; vide : <code>intParameter</code> 1 / 2. Le premier événement de chaque phase l'emporte</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>La courbe l'emporte</strong> : un clip qui a la courbe est lu par elle seule, ses événements sont ignorés.</li>
+<li><strong>Arrondi</strong> : tick d'un temps du clip = <code>RoundToInt(temps / Speed × TickRate)</code> (tick le plus proche, à la vitesse de la définition, <code>Mathf.RoundToInt</code> : une moitié s'arrondit au tick pair). La courbe est évaluée au temps de chaque tick (<code>tick / TickRate × Speed</code>) et arrondie à la valeur entière la plus proche : l'impact commence au premier tick où elle vaut 1 ou plus, la récupération au premier tick où elle vaut 2 ou plus. Une courbe linéaire de 0 à 1 bascule donc à mi-chemin de ses deux clés : utiliser des clés constantes (en marches).</li>
+<li><strong>Sans marqueur d'impact</strong> : pas de phases tirées des marqueurs (les précédentes sont gardées, un message le dit). <strong>Sans marqueur de récupération</strong> : l'impact dure jusqu'à la fin du clip.</li>
+<li><strong>Imports FBX en temps normalisé</strong> : dans <code>ModelImporterClipAnimation</code>, <code>events[].time</code> et les clés de <code>curves[].curve</code> sont normalisés sur le clip (0 = première image, 1 = dernière), convention d'Unity pour les réglages d'import. Le clip importé les rend en secondes, ce que lit l'extraction. Un outil qui écrit les marqueurs par code :</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="k">using</span><span class="w"> </span><span class="nn">UnityEditor</span><span class="p">;</span>
+<span class="k">using</span><span class="w"> </span><span class="nn">UnityEngine</span><span class="p">;</span>
+
+<span class="c1">// Script éditeur : marque le premier clip d'un FBX (temps normalisé : 0 = début du clip, 1 = fin)</span>
+<span class="kt">var</span><span class="w"> </span><span class="n">importer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="n">ModelImporter</span><span class="p">)</span><span class="n">AssetImporter</span><span class="p">.</span><span class="n">GetAtPath</span><span class="p">(</span><span class="n">path</span><span class="p">);</span>
+<span class="n">ModelImporterClipAnimation</span><span class="p">[]</span><span class="w"> </span><span class="n">clips</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">importer</span><span class="p">.</span><span class="n">clipAnimations</span><span class="p">.</span><span class="n">Length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="o">?</span><span class="w"> </span><span class="n">importer</span><span class="p">.</span><span class="n">clipAnimations</span>
+<span class="w">    </span><span class="p">:</span><span class="w"> </span><span class="n">importer</span><span class="p">.</span><span class="n">defaultClipAnimations</span><span class="p">;</span>
+
+<span class="kt">var</span><span class="w"> </span><span class="n">phase</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">AnimationCurve</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">Keyframe</span><span class="p">(</span><span class="mf">0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0f</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Keyframe</span><span class="p">(</span><span class="mf">0.3f</span><span class="p">,</span><span class="w"> </span><span class="mf">1f</span><span class="p">),</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Keyframe</span><span class="p">(</span><span class="mf">0.65f</span><span class="p">,</span><span class="w"> </span><span class="mf">2f</span><span class="p">));</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">phase</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<span class="w">    </span><span class="n">AnimationUtility</span><span class="p">.</span><span class="n">SetKeyRightTangentMode</span><span class="p">(</span><span class="n">phase</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">AnimationUtility</span><span class="p">.</span><span class="n">TangentMode</span><span class="p">.</span><span class="n">Constant</span><span class="p">);</span><span class="w"> </span><span class="c1">// marches</span>
+<span class="n">clips</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="n">curves</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="p">[]</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ClipAnimationInfoCurve</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"UnleashPhase"</span><span class="p">,</span><span class="w"> </span><span class="n">curve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">phase</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">};</span>
+
+<span class="n">importer</span><span class="p">.</span><span class="n">clipAnimations</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clips</span><span class="p">;</span>
+<span class="n">importer</span><span class="p">.</span><span class="n">SaveAndReimport</span><span class="p">();</span>
+</code></pre></div>
+<p>Les événements demandent un <code>AnimationPhaseEventReceiver</code> sur le personnage en Play Mode (sinon Unity affiche <em>AnimationEvent has no receiver</em> à chaque lecture) ; la courbe non.</p>
+<h2 id="ajouter-un-type-de-commande">Ajouter un type de commande<a class="headerlink" href="#ajouter-un-type-de-commande" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Valeur dans <code>PresentationCommandType</code>, champs nécessaires dans <code>PresentationCommand</code> (struct, sans référence managée).</li>
+<li>Méthode d'émission dans <code>PresentationCommandBuffer</code>.</li>
+<li>Traitement dans <code>PresentationSystem.Process</code> et interface de backend dans <code>PresentationBackends.cs</code>, implémentation par défaut dans <code>Backends/</code>.</li>
+<li>Tests EditMode sur les commandes émises (<code>PresentationCommandBuffer.Commands</code>), PlayMode sur la matérialisation.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copi\u00e9 dans le presse-papier", "clipboard.copy": "Copier dans le presse-papier", "search.result.more.one": "1 de plus sur cette page", "search.result.more.other": "# de plus sur cette page", "search.result.none": "Aucun document trouv\u00e9", "search.result.one": "1 document trouv\u00e9", "search.result.other": "# documents trouv\u00e9s", "search.result.placeholder": "Taper pour d\u00e9marrer la recherche", "search.result.term.missing": "Non trouv\u00e9", "select.version": "S\u00e9lectionner la version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
